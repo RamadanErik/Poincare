@@ -4,6 +4,9 @@ from matplotlib.widgets import Slider, Button
 import time
 import random
 
+
+#------------------------------------------------
+
 #eta = np.pi / 2  # EZT KELL VÁLTOZTATNI
 
 hiba1 = -np.pi/2+0.7  # EZT KELL VÁLTOZTATNI  pi/2 --> lambda/4
@@ -13,11 +16,6 @@ hiba3 = -np.pi/2   # EZT KELL VÁLTOZTATNI
 felbontas = 5000
 pontossag = 3000
 tureshatar = (50 / 2000.0) ** 2
-count = np.zeros(felbontas)
-
-eta1 = np.pi/2 + hiba1
-eta2 = np.pi + hiba2
-eta3 = np.pi/2 + hiba3
 
 # feny = np.array([[1], [0]])  # LHP
 # feny = np.array([[0],[1]]) #LVP
@@ -29,8 +27,14 @@ feny = 1/np.sqrt(2)*np.array([[1],[1j]]) #LCP
 
 #alfa = np.pi / 3
 
-np.random.seed(seed=int(time.time()))
+#-------------------------------------------------
 
+eta1 = np.pi/2 + hiba1
+eta2 = np.pi + hiba2
+eta3 = np.pi/2 + hiba3
+
+np.random.seed(seed=int(time.time()))
+count = np.zeros(felbontas)
 
 def wp(theta, eta):
     waveplate = np.exp(-1j * eta / 2) * np.array([[np.cos(theta) ** 2 + np.exp(1j * eta) * np.sin(theta) ** 2,
