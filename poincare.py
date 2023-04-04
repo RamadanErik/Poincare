@@ -9,13 +9,16 @@ import random
 
 #eta = np.pi / 2  # EZT KELL VÁLTOZTATNI
 
-hiba1 = -np.pi/2+0.7  # EZT KELL VÁLTOZTATNI  pi/2 --> lambda/4
-hiba2 = 0.5  # EZT KELL VÁLTOZTATNI
-hiba3 = -np.pi/2   # EZT KELL VÁLTOZTATNI
+hiba1 = 0  # EZT KELL VÁLTOZTATNI  pi/2 --> lambda/4
+hiba2 = 0  # EZT KELL VÁLTOZTATNI
+hiba3 = 0  # EZT KELL VÁLTOZTATNI
 
-felbontas = 5000
-pontossag = 3000
-tureshatar = (50 / 2000.0) ** 2
+felbontas = 3500
+pontossag = 3500
+tureshatar = 0.15**2
+#tureshatar = (100 / 2000.0) ** 2
+
+#alfa = np.pi / 3
 
 # feny = np.array([[1], [0]])  # LHP
 # feny = np.array([[0],[1]]) #LVP
@@ -25,7 +28,7 @@ tureshatar = (50 / 2000.0) ** 2
 feny = 1/np.sqrt(2)*np.array([[1],[1j]]) #LCP
 # feny = np.array([[np.cos(alfa)], [np.sin(alfa)]])
 
-#alfa = np.pi / 3
+
 
 #----------------------------------------------------
 
@@ -121,6 +124,7 @@ def lefedett_felszin(S):   #Ezt át kell nézni!
            #     count += 1
           # print(x - S[p,1:])
            if ( np.dot( x[i,:]-S[p,1:], x[i,:]-S[p,1:])<tureshatar):
+           #if (np.dot(x[i, :] - x[p, :], x[i, :] - x[p, :]) < tureshatar):
                if (count[p]==0):
                    count[p]=1
                    break
@@ -241,6 +245,31 @@ def update2(val):
     ax.plot(x, y, z, color='blue', linewidth=0.1)
 
     return
+
+x = np.random.rand(pontossag,3)
+theta = np.arccos((2 * np.random.rand(pontossag) - 1))
+phi = 2 * np.pi * np.random.rand(pontossag)
+x[:, 0] = np.sin(theta[:]) * np.cos(phi[:])
+x[:, 1] = np.sin(theta[:]) * np.sin(phi[:])
+x[:, 2] = np.cos(theta[:])
+tav = np.zeros(pontossag)
+for i in range(pontossag):
+    tav[i] = 100
+    for j in range(i+1,pontossag):
+        c = np.dot(x[i, :] - x[j, :], x[i, :] - x[j, :])
+        if c < tav[i]:
+            tav[i] = c
+
+counts, bins = np.histogram(np.sqrt(tav),int(pontossag/20),(0,1))
+counts2 = np.zeros(len(counts))
+for i in range(len(counts)):
+    for j in range(i):
+        counts2[i]+=counts[j]
+counts2/=pontossag
+
+plt.figure()
+plt.stairs(counts2, bins)
+
 
 
 #eta = np.pi
