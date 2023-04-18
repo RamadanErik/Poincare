@@ -1,0 +1,1823 @@
+2023-04-18 14:48:51.736 	Header 	teljes_scan 	Sequence Started
+2023-04-18 14:48:51.804 	Header 	teljes_scan 	Step 1 - Event
+2023-04-18 14:50:52.848 	Header 	teljes_scan 	Sequence Pausing
+2023-04-18 14:50:55.192 	Header 	teljes_scan 	Sequence Completed: Completed Cycle 0
+2023-04-18 14:50:55.699 	Header 	teljes_scan 	Sequence Completed
+2023-04-18 14:53:28.315 	Header 	scan 1 	Sequence Started
+2023-04-18 14:53:28.316 	Header 	scan 1 	Step 1 - Event
+2023-04-18 14:53:54.749 	Header 	scan 1 	Sequence Paused
+2023-04-18 14:53:54.749 	Header 	scan 1 	Sequence Pausing
+2023-04-18 14:53:55.900 	Header 	scan 1 	Sequence Completed: Completed Cycle 0
+2023-04-18 14:53:56.402 	Header 	scan 1 	Sequence Completed
+2023-04-18 14:54:06.116 	Header 	scan 1 	Sequence Started
+2023-04-18 14:54:06.117 	Header 	scan 1 	Step 1 - Event
+2023-04-18 14:54:45.262 	Header 	scan 1 	Sequence Paused
+2023-04-18 14:54:46.607 	Header 	scan 1 	Sequence Completed: Completed Cycle 0
+2023-04-18 14:54:47.108 	Header 	scan 1 	Sequence Completed
+2023-04-18 14:56:20.505 	Header 	scan 1 	Sequence Started
+2023-04-18 14:56:20.509 	Header 	scan 1 	Step 1 - Event
+2023-04-18 14:56:37.671 	Header 	scan 1 	Completed Cycle 1
+2023-04-18 14:56:37.682 	Header 	scan 1 	Sequence Completed: Completed Cycle 1
+2023-04-18 14:56:38.184 	Header 	scan 1 	Sequence Completed
+2023-04-18 14:56:47.371 	Header 	teljes_scan 	Sequence Started
+2023-04-18 14:56:47.375 	Header 	teljes_scan 	Step 1 - Event
+2023-04-18 14:57:37.738 	Header 	teljes_scan 	Sequence Paused
+2023-04-18 14:57:37.741 	Header 	teljes_scan 	Sequence Pausing
+2023-04-18 14:57:37.833 	Header 	teljes_scan 	Sequence Paused
+2023-04-18 14:57:41.126 	Header 	teljes_scan 	Sequence Completed: Completed Cycle 0
+2023-04-18 14:57:41.633 	Header 	teljes_scan 	Sequence Completed
+2023-04-18 14:58:22.696 	Header 	teljes_scan 	Sequence Started
+2023-04-18 14:58:22.702 	Header 	teljes_scan 	Step 1 - Event
+2023-04-18 15:04:48.573 	Header 	teljes_scan 	Sequence Paused
+2023-04-18 15:04:48.578 	Header 	teljes_scan 	Sequence Pausing
+2023-04-18 15:04:53.911 	Header 	teljes_scan 	Sequence Paused
+2023-04-18 15:04:55.160 	Header 	teljes_scan 	Sequence Completed: Completed Cycle 0
+2023-04-18 15:04:55.661 	Header 	teljes_scan 	Sequence Completed
+2023-04-18 15:05:37.670 	Header 	scan 1 	Sequence Started
+2023-04-18 15:05:37.676 	Header 	scan 1 	Step 1 - Event
+2023-04-18 15:05:57.438 	Header 	scan 1 	Completed Cycle 1
+2023-04-18 15:05:57.441 	Header 	scan 1 	Sequence Completed: Completed Cycle 1
+2023-04-18 15:05:57.945 	Header 	scan 1 	Sequence Completed
+2023-04-18 15:07:24.639 	Header 	scan 1 	Sequence Started
+2023-04-18 15:07:24.642 	Header 	scan 1 	Step 1 - Event
+2023-04-18 15:07:58.534 	Header 	scan 1 	Completed Cycle 1
+2023-04-18 15:07:58.541 	Header 	scan 1 	Sequence Completed: Completed Cycle 1
+2023-04-18 15:07:59.043 	Header 	scan 1 	Sequence Completed
+2023-04-18 15:09:02.766 	Header 	scan 1 	Sequence Started
+2023-04-18 15:09:02.776 	Header 	scan 1 	Step 1 - Event
+2023-04-18 15:09:37.370 	Header 	scan 1 	Completed Cycle 1
+2023-04-18 15:09:37.374 	Header 	scan 1 	Sequence Completed: Completed Cycle 1
+2023-04-18 15:09:37.875 	Header 	scan 1 	Sequence Completed
+2023-04-18 15:14:38.929 	Header 	scan 1 	Sequence Started
+2023-04-18 15:14:38.937 	Header 	scan 1 	Step 1 - Event
+2023-04-18 15:15:37.827 	Header 	scan 1 	Sequence Completed: Completed Cycle 0
+2023-04-18 15:15:38.331 	Header 	scan 1 	Sequence Completed
+2023-04-18 15:16:06.957 	Header 	scan 1 	Sequence Started
+2023-04-18 15:16:06.964 	Header 	scan 1 	Step 1 - Event
+2023-04-18 15:16:17.680 	Header 	scan 1 	Sequence Completed: Completed Cycle 0
+2023-04-18 15:16:18.182 	Header 	scan 1 	Sequence Completed
+2023-04-18 15:16:28.957 	Header 	scan 1 	Sequence Started
+2023-04-18 15:16:28.961 	Header 	scan 1 	Step 1 - Event
+2023-04-18 15:17:04.010 	Header 	scan 1 	Sequence Completed: Completed Cycle 0
+2023-04-18 15:17:04.513 	Header 	scan 1 	Sequence Completed
+2023-04-18 15:20:13.457 	Header 	scan 1 	Sequence Started
+2023-04-18 15:20:13.464 	Header 	scan 1 	Step 1 - Event
+2023-04-18 15:20:47.473 	Header 	scan 1 	Completed Cycle 1
+2023-04-18 15:20:47.477 	Header 	scan 1 	Sequence Completed: Completed Cycle 1
+2023-04-18 15:20:47.979 	Header 	scan 1 	Sequence Completed
+2023-04-18 15:22:07.653 	Header 	scan 1 	Sequence Started
+2023-04-18 15:22:07.658 	Header 	scan 1 	Step 1 - Event
+2023-04-18 15:25:29.260 	Header 	scan 1 	Completed Cycle 1
+2023-04-18 15:25:29.264 	Header 	scan 1 	Sequence Completed: Completed Cycle 1
+2023-04-18 15:25:29.766 	Header 	scan 1 	Sequence Completed
+2023-04-18 15:26:01.170 	Header 	scan 1 	Sequence Started
+2023-04-18 15:26:01.175 	Header 	scan 1 	Step 1 - Event
+2023-04-18 15:26:41.797 	Header 	scan 1 	Completed Cycle 1
+2023-04-18 15:26:41.810 	Header 	scan 1 	Sequence Completed: Completed Cycle 1
+2023-04-18 15:26:42.312 	Header 	scan 1 	Sequence Completed
+2023-04-18 15:26:47.366 	Header 	scan 1 	Sequence Started
+2023-04-18 15:26:47.371 	Header 	scan 1 	Step 1 - Event
+2023-04-18 15:27:27.688 	Header 	scan 1 	Completed Cycle 1
+2023-04-18 15:27:27.694 	Header 	scan 1 	Sequence Completed: Completed Cycle 1
+2023-04-18 15:27:28.197 	Header 	scan 1 	Sequence Completed
+2023-04-18 15:27:46.054 	Header 	scan 1 	Sequence Started
+2023-04-18 15:27:46.074 	Header 	scan 1 	Step 1 - Event
+2023-04-18 15:28:27.422 	Header 	scan 1 	Completed Cycle 1
+2023-04-18 15:28:27.427 	Header 	scan 1 	Sequence Completed: Completed Cycle 1
+2023-04-18 15:28:27.957 	Header 	scan 1 	Sequence Completed
+2023-04-18 15:30:27.590 	Header 	scan 1 	Sequence Started
+2023-04-18 15:30:27.593 	Header 	scan 1 	Step 1 - Event
+2023-04-18 15:31:08.553 	Header 	scan 1 	Completed Cycle 1
+2023-04-18 15:31:08.557 	Header 	scan 1 	Sequence Completed: Completed Cycle 1
+2023-04-18 15:31:09.060 	Header 	scan 1 	Sequence Completed
+2023-04-18 15:32:14.598 	Header 	scan 1 	Sequence Started
+2023-04-18 15:32:14.605 	Header 	scan 1 	Step 1 - Event
+2023-04-18 15:32:56.363 	Header 	scan 1 	Completed Cycle 1
+2023-04-18 15:32:56.367 	Header 	scan 1 	Sequence Completed: Completed Cycle 1
+2023-04-18 15:32:56.869 	Header 	scan 1 	Sequence Completed
+2023-04-18 15:41:30.841 	Header 	scan 1 	Sequence Started
+2023-04-18 15:41:30.867 	Header 	scan 1 	Step 1 - Event
+2023-04-18 15:41:41.844 	Header 	scan 1 	Sequence Completed: Completed Cycle 0
+2023-04-18 15:41:42.346 	Header 	scan 1 	Sequence Completed
+2023-04-18 15:41:47.212 	Header 	scan 1 	Sequence Started
+2023-04-18 15:41:47.218 	Header 	scan 1 	Step 1 - Event
+2023-04-18 15:42:21.990 	Header 	scan 1 	Completed Cycle 1
+2023-04-18 15:42:21.995 	Header 	scan 1 	Sequence Completed: Completed Cycle 1
+2023-04-18 15:42:22.498 	Header 	scan 1 	Sequence Completed
+2023-04-18 15:44:06.535 	Header 	scan 1 	Sequence Started
+2023-04-18 15:44:06.546 	Header 	scan 1 	Step 1 - Event
+2023-04-18 15:44:47.489 	Header 	scan 1 	Completed Cycle 1
+2023-04-18 15:44:47.492 	Header 	scan 1 	Sequence Completed: Completed Cycle 1
+2023-04-18 15:44:47.994 	Header 	scan 1 	Sequence Completed
+2023-04-18 15:48:07.475 	Header 	scan 1 	Sequence Started
+2023-04-18 15:48:07.481 	Header 	scan 1 	Step 1 - Event
+2023-04-18 15:48:25.102 	Header 	scan 1 	Sequence Paused
+2023-04-18 15:48:26.993 	Header 	scan 1 	Sequence Completed: Completed Cycle 0
+2023-04-18 15:48:27.496 	Header 	scan 1 	Sequence Completed
+2023-04-18 15:48:49.110 	Header 	scan 1 	Sequence Started
+2023-04-18 15:48:49.114 	Header 	scan 1 	Step 1 - Event
+2023-04-18 15:49:32.206 	Header 	scan 1 	Sequence Paused
+2023-04-18 15:52:30.905 	Header 	scan 1 	Sequence Completed: Completed Cycle 0
+2023-04-18 15:52:31.410 	Header 	scan 1 	Sequence Completed
+2023-04-18 15:52:33.669 	Header 	scan 1 	Sequence Started
+2023-04-18 15:52:33.675 	Header 	scan 1 	Step 1 - Event
+2023-04-18 15:55:42.629 	Header 	scan 1 	Completed Cycle 1
+2023-04-18 15:55:42.664 	Header 	scan 1 	Sequence Completed: Completed Cycle 1
+2023-04-18 15:55:43.166 	Header 	scan 1 	Sequence Completed
+2023-04-18 16:03:04.047 	Header 	scan 1 	Sequence Started
+2023-04-18 16:03:04.053 	Header 	scan 1 	Step 1 - Event
+2023-04-18 16:04:47.669 	Header 	scan 1 	Completed Cycle 1
+2023-04-18 16:04:47.673 	Header 	scan 1 	Sequence Completed: Completed Cycle 1
+2023-04-18 16:04:48.176 	Header 	scan 1 	Sequence Completed
+2023-04-18 16:06:41.206 	Header 	scan 2 	Sequence Started
+2023-04-18 16:06:41.211 	Header 	scan 2 	Step 1 - Event
+2023-04-18 16:06:51.893 	Info 	38290024-2 	MoveToPosition Requested 	Position = 105
+2023-04-18 16:06:51.955 	Info 	38290024 	Waiting
+2023-04-18 16:06:52.463 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:06:52.476 	Info 	38290024-2 	MoveToPosition Requested 	Position = 113
+2023-04-18 16:06:52.551 	Info 	38290024 	Waiting
+2023-04-18 16:06:53.066 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:06:53.070 	Info 	38290024-2 	MoveToPosition Requested 	Position = 121
+2023-04-18 16:06:53.144 	Info 	38290024 	Waiting
+2023-04-18 16:06:53.658 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:06:53.662 	Info 	38290024-2 	MoveToPosition Requested 	Position = 129
+2023-04-18 16:06:53.715 	Info 	38290024 	Waiting
+2023-04-18 16:06:54.235 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:06:54.268 	Info 	38290024-2 	MoveToPosition Requested 	Position = 137
+2023-04-18 16:06:54.322 	Info 	38290024 	Waiting
+2023-04-18 16:06:54.839 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:06:54.846 	Info 	38290024-2 	MoveToPosition Requested 	Position = 145
+2023-04-18 16:06:54.911 	Info 	38290024 	Waiting
+2023-04-18 16:06:55.435 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:06:55.444 	Info 	38290024-2 	MoveToPosition Requested 	Position = 153
+2023-04-18 16:06:55.507 	Info 	38290024 	Waiting
+2023-04-18 16:06:56.019 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:06:56.024 	Info 	38290024-2 	MoveToPosition Requested 	Position = 161
+2023-04-18 16:06:56.089 	Info 	38290024 	Waiting
+2023-04-18 16:06:56.612 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:06:56.623 	Info 	38290024-2 	MoveToPosition Requested 	Position = 169
+2023-04-18 16:06:56.682 	Info 	38290024 	Waiting
+2023-04-18 16:06:57.190 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:06:57.193 	Info 	38290024-2 	MoveToPosition Requested 	Position = 177
+2023-04-18 16:06:57.247 	Info 	38290024 	Waiting
+2023-04-18 16:06:57.768 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:06:57.772 	Info 	38290024-2 	MoveToPosition Requested 	Position = 185
+2023-04-18 16:06:57.834 	Info 	38290024 	Waiting
+2023-04-18 16:06:58.348 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:06:58.351 	Info 	38290024-2 	MoveToPosition Requested 	Position = 193
+2023-04-18 16:06:58.413 	Info 	38290024 	Waiting
+2023-04-18 16:06:58.941 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:06:58.955 	Info 	38290024-2 	MoveToPosition Requested 	Position = 201
+2023-04-18 16:06:59.023 	Info 	38290024 	Waiting
+2023-04-18 16:06:59.539 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:06:59.543 	Info 	38290024-2 	MoveToPosition Requested 	Position = 210
+2023-04-18 16:06:59.599 	Info 	38290024 	Waiting
+2023-04-18 16:07:00.115 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:00.128 	Info 	38290024-2 	MoveToPosition Requested 	Position = 218
+2023-04-18 16:07:00.190 	Info 	38290024 	Waiting
+2023-04-18 16:07:00.695 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:00.698 	Info 	38290024-2 	MoveToPosition Requested 	Position = 226
+2023-04-18 16:07:00.754 	Info 	38290024 	Waiting
+2023-04-18 16:07:01.270 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:01.279 	Info 	38290024-2 	MoveToPosition Requested 	Position = 234
+2023-04-18 16:07:01.328 	Info 	38290024 	Waiting
+2023-04-18 16:07:01.846 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:01.851 	Info 	38290024-2 	MoveToPosition Requested 	Position = 242
+2023-04-18 16:07:01.902 	Info 	38290024 	Waiting
+2023-04-18 16:07:02.408 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:02.411 	Info 	38290024-2 	MoveToPosition Requested 	Position = 250
+2023-04-18 16:07:02.476 	Info 	38290024 	Waiting
+2023-04-18 16:07:02.996 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:03.000 	Info 	38290024-2 	MoveToPosition Requested 	Position = 258
+2023-04-18 16:07:03.064 	Info 	38290024 	Waiting
+2023-04-18 16:07:03.582 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:03.586 	Info 	38290024-2 	MoveToPosition Requested 	Position = 266
+2023-04-18 16:07:03.650 	Info 	38290024 	Waiting
+2023-04-18 16:07:04.158 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:04.166 	Info 	38290024-2 	MoveToPosition Requested 	Position = 274
+2023-04-18 16:07:04.236 	Info 	38290024 	Waiting
+2023-04-18 16:07:04.752 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:04.764 	Info 	38290024-2 	MoveToPosition Requested 	Position = 282
+2023-04-18 16:07:04.830 	Info 	38290024 	Waiting
+2023-04-18 16:07:05.346 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:05.350 	Info 	38290024-2 	MoveToPosition Requested 	Position = 290
+2023-04-18 16:07:05.409 	Info 	38290024 	Waiting
+2023-04-18 16:07:05.929 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:05.933 	Info 	38290024-2 	MoveToPosition Requested 	Position = 298
+2023-04-18 16:07:05.994 	Info 	38290024 	Waiting
+2023-04-18 16:07:06.513 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:06.518 	Info 	38290024-2 	MoveToPosition Requested 	Position = 306
+2023-04-18 16:07:06.566 	Info 	38290024 	Waiting
+2023-04-18 16:07:07.079 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:07.083 	Info 	38290024-2 	MoveToPosition Requested 	Position = 314
+2023-04-18 16:07:07.145 	Info 	38290024 	Waiting
+2023-04-18 16:07:07.660 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:07.665 	Info 	38290024-2 	MoveToPosition Requested 	Position = 322
+2023-04-18 16:07:07.739 	Info 	38290024 	Waiting
+2023-04-18 16:07:08.255 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:08.258 	Info 	38290024-2 	MoveToPosition Requested 	Position = 330
+2023-04-18 16:07:08.340 	Info 	38290024 	Waiting
+2023-04-18 16:07:08.846 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:08.850 	Info 	38290024-2 	MoveToPosition Requested 	Position = 338
+2023-04-18 16:07:08.910 	Info 	38290024 	Waiting
+2023-04-18 16:07:09.428 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:09.441 	Info 	38290024-2 	MoveToPosition Requested 	Position = 347
+2023-04-18 16:07:09.498 	Info 	38290024 	Waiting
+2023-04-18 16:07:10.004 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:10.011 	Info 	38290024-2 	MoveToPosition Requested 	Position = 355
+2023-04-18 16:07:10.078 	Info 	38290024 	Waiting
+2023-04-18 16:07:10.596 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:10.601 	Info 	38290024-2 	MoveToPosition Requested 	Position = 363
+2023-04-18 16:07:10.669 	Info 	38290024 	Waiting
+2023-04-18 16:07:11.175 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:11.198 	Info 	38290024-2 	MoveToPosition Requested 	Position = 371
+2023-04-18 16:07:11.254 	Info 	38290024 	Waiting
+2023-04-18 16:07:11.768 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:11.775 	Info 	38290024-2 	MoveToPosition Requested 	Position = 379
+2023-04-18 16:07:11.832 	Info 	38290024 	Waiting
+2023-04-18 16:07:12.355 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:12.359 	Info 	38290024-2 	MoveToPosition Requested 	Position = 387
+2023-04-18 16:07:12.426 	Info 	38290024 	Waiting
+2023-04-18 16:07:12.946 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:12.953 	Info 	38290024-2 	MoveToPosition Requested 	Position = 395
+2023-04-18 16:07:13.023 	Info 	38290024 	Waiting
+2023-04-18 16:07:13.540 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:13.544 	Info 	38290024-2 	MoveToPosition Requested 	Position = 403
+2023-04-18 16:07:13.594 	Info 	38290024 	Waiting
+2023-04-18 16:07:14.115 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:14.119 	Info 	38290024-2 	MoveToPosition Requested 	Position = 411
+2023-04-18 16:07:14.171 	Info 	38290024 	Waiting
+2023-04-18 16:07:14.689 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:14.692 	Info 	38290024-2 	MoveToPosition Requested 	Position = 419
+2023-04-18 16:07:14.765 	Info 	38290024 	Waiting
+2023-04-18 16:07:15.283 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:15.286 	Info 	38290024-2 	MoveToPosition Requested 	Position = 427
+2023-04-18 16:07:15.362 	Info 	38290024 	Waiting
+2023-04-18 16:07:15.877 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:15.883 	Info 	38290024-2 	MoveToPosition Requested 	Position = 435
+2023-04-18 16:07:15.932 	Info 	38290024 	Waiting
+2023-04-18 16:07:16.450 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:16.454 	Info 	38290024-2 	MoveToPosition Requested 	Position = 443
+2023-04-18 16:07:16.510 	Info 	38290024 	Waiting
+2023-04-18 16:07:17.019 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:17.023 	Info 	38290024-2 	MoveToPosition Requested 	Position = 451
+2023-04-18 16:07:17.085 	Info 	38290024 	Waiting
+2023-04-18 16:07:17.604 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:17.613 	Info 	38290024-2 	MoveToPosition Requested 	Position = 459
+2023-04-18 16:07:17.664 	Info 	38290024 	Waiting
+2023-04-18 16:07:18.178 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:18.196 	Info 	38290024-2 	MoveToPosition Requested 	Position = 467
+2023-04-18 16:07:18.257 	Info 	38290024 	Waiting
+2023-04-18 16:07:18.770 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:18.778 	Info 	38290024-2 	MoveToPosition Requested 	Position = 475
+2023-04-18 16:07:18.839 	Info 	38290024 	Waiting
+2023-04-18 16:07:19.357 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:19.361 	Info 	38290024-2 	MoveToPosition Requested 	Position = 484
+2023-04-18 16:07:19.425 	Info 	38290024 	Waiting
+2023-04-18 16:07:19.940 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:19.944 	Info 	38290024-2 	MoveToPosition Requested 	Position = 492
+2023-04-18 16:07:20.004 	Info 	38290024 	Waiting
+2023-04-18 16:07:20.518 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:20.522 	Info 	38290024-2 	MoveToPosition Requested 	Position = 500
+2023-04-18 16:07:20.577 	Info 	38290024 	Waiting
+2023-04-18 16:07:21.127 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:21.140 	Info 	38290024-2 	MoveToPosition Requested 	Position = 508
+2023-04-18 16:07:21.201 	Info 	38290024 	Waiting
+2023-04-18 16:07:21.706 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:21.709 	Info 	38290024-2 	MoveToPosition Requested 	Position = 516
+2023-04-18 16:07:21.764 	Info 	38290024 	Waiting
+2023-04-18 16:07:22.285 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:22.304 	Info 	38290024-2 	MoveToPosition Requested 	Position = 524
+2023-04-18 16:07:22.354 	Info 	38290024 	Waiting
+2023-04-18 16:07:22.871 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:22.887 	Info 	38290024-2 	MoveToPosition Requested 	Position = 532
+2023-04-18 16:07:22.944 	Info 	38290024 	Waiting
+2023-04-18 16:07:23.458 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:23.467 	Info 	38290024-2 	MoveToPosition Requested 	Position = 540
+2023-04-18 16:07:23.526 	Info 	38290024 	Waiting
+2023-04-18 16:07:24.050 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:24.058 	Info 	38290024-2 	MoveToPosition Requested 	Position = 548
+2023-04-18 16:07:24.127 	Info 	38290024 	Waiting
+2023-04-18 16:07:24.654 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:24.669 	Info 	38290024-2 	MoveToPosition Requested 	Position = 556
+2023-04-18 16:07:24.732 	Info 	38290024 	Waiting
+2023-04-18 16:07:25.254 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:25.266 	Info 	38290024-2 	MoveToPosition Requested 	Position = 564
+2023-04-18 16:07:25.339 	Info 	38290024 	Waiting
+2023-04-18 16:07:25.845 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:25.849 	Info 	38290024-2 	MoveToPosition Requested 	Position = 572
+2023-04-18 16:07:25.901 	Info 	38290024 	Waiting
+2023-04-18 16:07:26.428 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:26.436 	Info 	38290024-2 	MoveToPosition Requested 	Position = 580
+2023-04-18 16:07:26.512 	Info 	38290024 	Waiting
+2023-04-18 16:07:27.033 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:27.037 	Info 	38290024-2 	MoveToPosition Requested 	Position = 588
+2023-04-18 16:07:27.088 	Info 	38290024 	Waiting
+2023-04-18 16:07:27.611 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:27.616 	Info 	38290024-2 	MoveToPosition Requested 	Position = 596
+2023-04-18 16:07:27.711 	Info 	38290024 	Waiting
+2023-04-18 16:07:28.226 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:28.230 	Info 	38290024-2 	MoveToPosition Requested 	Position = 604
+2023-04-18 16:07:28.291 	Info 	38290024 	Waiting
+2023-04-18 16:07:28.812 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:28.816 	Info 	38290024-2 	MoveToPosition Requested 	Position = 612
+2023-04-18 16:07:28.912 	Info 	38290024 	Waiting
+2023-04-18 16:07:29.430 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:29.437 	Info 	38290024-2 	MoveToPosition Requested 	Position = 621
+2023-04-18 16:07:29.490 	Info 	38290024 	Waiting
+2023-04-18 16:07:30.003 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:30.006 	Info 	38290024-2 	MoveToPosition Requested 	Position = 629
+2023-04-18 16:07:30.073 	Info 	38290024 	Waiting
+2023-04-18 16:07:30.593 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:30.602 	Info 	38290024-2 	MoveToPosition Requested 	Position = 637
+2023-04-18 16:07:30.658 	Info 	38290024 	Waiting
+2023-04-18 16:07:31.176 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:31.192 	Info 	38290024-2 	MoveToPosition Requested 	Position = 645
+2023-04-18 16:07:31.264 	Info 	38290024 	Waiting
+2023-04-18 16:07:31.801 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:31.804 	Info 	38290024-2 	MoveToPosition Requested 	Position = 653
+2023-04-18 16:07:31.889 	Info 	38290024 	Waiting
+2023-04-18 16:07:32.395 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:32.403 	Info 	38290024-2 	MoveToPosition Requested 	Position = 661
+2023-04-18 16:07:32.463 	Info 	38290024 	Waiting
+2023-04-18 16:07:32.978 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:32.979 	Info 	38290024-2 	MoveToPosition Requested 	Position = 669
+2023-04-18 16:07:33.062 	Info 	38290024 	Waiting
+2023-04-18 16:07:33.580 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:33.584 	Info 	38290024-2 	MoveToPosition Requested 	Position = 677
+2023-04-18 16:07:33.639 	Info 	38290024 	Waiting
+2023-04-18 16:07:34.145 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:34.165 	Info 	38290024-2 	MoveToPosition Requested 	Position = 685
+2023-04-18 16:07:34.218 	Info 	38290024 	Waiting
+2023-04-18 16:07:34.736 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:34.753 	Info 	38290024-2 	MoveToPosition Requested 	Position = 693
+2023-04-18 16:07:34.808 	Info 	38290024 	Waiting
+2023-04-18 16:07:35.333 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:35.345 	Info 	38290024-2 	MoveToPosition Requested 	Position = 701
+2023-04-18 16:07:35.399 	Info 	38290024 	Waiting
+2023-04-18 16:07:35.913 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:35.917 	Info 	38290024-2 	MoveToPosition Requested 	Position = 709
+2023-04-18 16:07:35.989 	Info 	38290024 	Waiting
+2023-04-18 16:07:36.504 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:36.514 	Info 	38290024-2 	MoveToPosition Requested 	Position = 717
+2023-04-18 16:07:36.571 	Info 	38290024 	Waiting
+2023-04-18 16:07:37.079 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:37.125 	Info 	38290024-2 	MoveToPosition Requested 	Position = 725
+2023-04-18 16:07:37.180 	Info 	38290024 	Waiting
+2023-04-18 16:07:37.692 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:37.696 	Info 	38290024-2 	MoveToPosition Requested 	Position = 733
+2023-04-18 16:07:37.761 	Info 	38290024 	Waiting
+2023-04-18 16:07:38.267 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:38.280 	Info 	38290024-2 	MoveToPosition Requested 	Position = 741
+2023-04-18 16:07:38.354 	Info 	38290024 	Waiting
+2023-04-18 16:07:38.862 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:38.865 	Info 	38290024-2 	MoveToPosition Requested 	Position = 749
+2023-04-18 16:07:38.938 	Info 	38290024 	Waiting
+2023-04-18 16:07:39.445 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:39.448 	Info 	38290024-2 	MoveToPosition Requested 	Position = 758
+2023-04-18 16:07:39.511 	Info 	38290024 	Waiting
+2023-04-18 16:07:40.034 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:40.037 	Info 	38290024-2 	MoveToPosition Requested 	Position = 766
+2023-04-18 16:07:40.091 	Info 	38290024 	Waiting
+2023-04-18 16:07:40.597 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:40.612 	Info 	38290024-2 	MoveToPosition Requested 	Position = 774
+2023-04-18 16:07:40.675 	Info 	38290024 	Waiting
+2023-04-18 16:07:41.201 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:41.205 	Info 	38290024-2 	MoveToPosition Requested 	Position = 782
+2023-04-18 16:07:41.254 	Info 	38290024 	Waiting
+2023-04-18 16:07:41.849 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:41.878 	Info 	38290024-2 	MoveToPosition Requested 	Position = 790
+2023-04-18 16:07:41.933 	Info 	38290024 	Waiting
+2023-04-18 16:07:42.476 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:42.496 	Info 	38290024-2 	MoveToPosition Requested 	Position = 798
+2023-04-18 16:07:42.557 	Info 	38290024 	Waiting
+2023-04-18 16:07:43.094 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:43.107 	Info 	38290024-2 	MoveToPosition Requested 	Position = 806
+2023-04-18 16:07:43.168 	Info 	38290024 	Waiting
+2023-04-18 16:07:43.689 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:43.702 	Info 	38290024-2 	MoveToPosition Requested 	Position = 814
+2023-04-18 16:07:43.775 	Info 	38290024 	Waiting
+2023-04-18 16:07:44.283 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:44.287 	Info 	38290024-2 	MoveToPosition Requested 	Position = 822
+2023-04-18 16:07:44.346 	Info 	38290024 	Waiting
+2023-04-18 16:07:44.863 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:44.867 	Info 	38290024-2 	MoveToPosition Requested 	Position = 830
+2023-04-18 16:07:44.935 	Info 	38290024 	Waiting
+2023-04-18 16:07:45.455 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:45.458 	Info 	38290024-2 	MoveToPosition Requested 	Position = 838
+2023-04-18 16:07:45.516 	Info 	38290024 	Waiting
+2023-04-18 16:07:46.036 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:46.046 	Info 	38290024-2 	MoveToPosition Requested 	Position = 846
+2023-04-18 16:07:46.110 	Info 	38290024 	Waiting
+2023-04-18 16:07:46.616 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:46.624 	Info 	38290024-2 	MoveToPosition Requested 	Position = 854
+2023-04-18 16:07:46.691 	Info 	38290024 	Waiting
+2023-04-18 16:07:47.236 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:47.242 	Info 	38290024-2 	MoveToPosition Requested 	Position = 862
+2023-04-18 16:07:47.306 	Info 	38290024 	Waiting
+2023-04-18 16:07:47.815 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:47.820 	Info 	38290024-2 	MoveToPosition Requested 	Position = 870
+2023-04-18 16:07:47.884 	Info 	38290024 	Waiting
+2023-04-18 16:07:48.401 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:48.404 	Info 	38290024-2 	MoveToPosition Requested 	Position = 878
+2023-04-18 16:07:48.464 	Info 	38290024 	Waiting
+2023-04-18 16:07:48.972 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:48.984 	Info 	38290024-2 	MoveToPosition Requested 	Position = 886
+2023-04-18 16:07:49.039 	Info 	38290024 	Waiting
+2023-04-18 16:07:49.554 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:49.560 	Info 	38290024-2 	MoveToPosition Requested 	Position = 895
+2023-04-18 16:07:49.630 	Info 	38290024 	Waiting
+2023-04-18 16:07:50.144 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:50.148 	Info 	38290024-2 	MoveToPosition Requested 	Position = 903
+2023-04-18 16:07:50.209 	Info 	38290024 	Waiting
+2023-04-18 16:07:50.730 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:50.751 	Info 	38290024-2 	MoveToPosition Requested 	Position = 911
+2023-04-18 16:07:50.832 	Info 	38290024 	Waiting
+2023-04-18 16:07:51.346 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:51.349 	Info 	38290024-2 	MoveToPosition Requested 	Position = 919
+2023-04-18 16:07:51.406 	Info 	38290024 	Waiting
+2023-04-18 16:07:51.923 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:51.948 	Info 	38290024-2 	MoveToPosition Requested 	Position = 927
+2023-04-18 16:07:52.000 	Info 	38290024 	Waiting
+2023-04-18 16:07:52.517 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:52.520 	Info 	38290024-2 	MoveToPosition Requested 	Position = 935
+2023-04-18 16:07:52.580 	Info 	38290024 	Waiting
+2023-04-18 16:07:53.098 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:53.099 	Info 	38290024-2 	MoveToPosition Requested 	Position = 943
+2023-04-18 16:07:53.149 	Info 	38290024 	Waiting
+2023-04-18 16:07:53.659 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:53.666 	Info 	38290024-2 	MoveToPosition Requested 	Position = 951
+2023-04-18 16:07:53.737 	Info 	38290024 	Waiting
+2023-04-18 16:07:54.254 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:54.257 	Info 	38290024-2 	MoveToPosition Requested 	Position = 959
+2023-04-18 16:07:54.319 	Info 	38290024 	Waiting
+2023-04-18 16:07:54.831 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:54.836 	Info 	38290024-2 	MoveToPosition Requested 	Position = 967
+2023-04-18 16:07:54.895 	Info 	38290024 	Waiting
+2023-04-18 16:07:55.408 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:55.420 	Info 	38290024-2 	MoveToPosition Requested 	Position = 975
+2023-04-18 16:07:55.470 	Info 	38290024 	Waiting
+2023-04-18 16:07:55.986 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:55.995 	Info 	38290024-2 	MoveToPosition Requested 	Position = 983
+2023-04-18 16:07:56.064 	Info 	38290024 	Waiting
+2023-04-18 16:07:56.583 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:56.587 	Info 	38290024-2 	MoveToPosition Requested 	Position = 991
+2023-04-18 16:07:56.637 	Info 	38290024 	Waiting
+2023-04-18 16:07:57.143 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:57.154 	Info 	38290024-2 	MoveToPosition Requested 	Position = 999
+2023-04-18 16:07:57.216 	Info 	38290024 	Waiting
+2023-04-18 16:07:57.721 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:57.725 	Info 	38290024-2 	MoveToPosition Requested 	Position = 1007
+2023-04-18 16:07:57.777 	Info 	38290024 	Waiting
+2023-04-18 16:07:58.285 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:58.289 	Info 	38290024-2 	MoveToPosition Requested 	Position = 1015
+2023-04-18 16:07:58.354 	Info 	38290024 	Waiting
+2023-04-18 16:07:58.862 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:58.867 	Info 	38290024-2 	MoveToPosition Requested 	Position = 1023
+2023-04-18 16:07:58.950 	Info 	38290024 	Waiting
+2023-04-18 16:07:59.469 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:07:59.483 	Info 	38290024-2 	MoveToPosition Requested 	Position = 1032
+2023-04-18 16:07:59.554 	Info 	38290024 	Waiting
+2023-04-18 16:08:00.071 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:08:00.075 	Info 	38290024-2 	MoveToPosition Requested 	Position = 1040
+2023-04-18 16:08:00.141 	Info 	38290024 	Waiting
+2023-04-18 16:08:00.662 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:08:00.668 	Info 	38290024-2 	MoveToPosition Requested 	Position = 1048
+2023-04-18 16:08:00.723 	Info 	38290024 	Waiting
+2023-04-18 16:08:01.242 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:08:01.251 	Info 	38290024-2 	MoveToPosition Requested 	Position = 1056
+2023-04-18 16:08:01.300 	Info 	38290024 	Waiting
+2023-04-18 16:08:01.816 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:08:01.853 	Info 	38290024-2 	MoveToPosition Requested 	Position = 1064
+2023-04-18 16:08:01.906 	Info 	38290024 	Waiting
+2023-04-18 16:08:02.424 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:08:02.447 	Info 	38290024-2 	MoveToPosition Requested 	Position = 1072
+2023-04-18 16:08:02.502 	Info 	38290024 	Waiting
+2023-04-18 16:08:03.020 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:08:03.046 	Info 	38290024-2 	MoveToPosition Requested 	Position = 1080
+2023-04-18 16:08:03.090 	Info 	38290024 	Waiting
+2023-04-18 16:08:03.597 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:08:03.603 	Info 	38290024-2 	MoveToPosition Requested 	Position = 1088
+2023-04-18 16:08:03.658 	Info 	38290024 	Waiting
+2023-04-18 16:08:04.180 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:08:04.183 	Info 	38290024-2 	MoveToPosition Requested 	Position = 1096
+2023-04-18 16:08:04.233 	Info 	38290024 	Waiting
+2023-04-18 16:08:04.740 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:08:04.757 	Info 	38290024-2 	MoveToPosition Requested 	Position = 1104
+2023-04-18 16:08:04.812 	Info 	38290024 	Waiting
+2023-04-18 16:08:05.332 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:08:05.334 	Info 	38290024-2 	MoveToPosition Requested 	Position = 1112
+2023-04-18 16:08:05.385 	Info 	38290024 	Waiting
+2023-04-18 16:08:05.897 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:08:05.901 	Info 	38290024-2 	MoveToPosition Requested 	Position = 1120
+2023-04-18 16:08:05.961 	Info 	38290024 	Waiting
+2023-04-18 16:08:06.485 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:08:06.490 	Info 	38290024-2 	MoveToPosition Requested 	Position = 1128
+2023-04-18 16:08:06.537 	Info 	38290024 	Waiting
+2023-04-18 16:08:07.057 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:08:07.062 	Info 	38290024-2 	MoveToPosition Requested 	Position = 1136
+2023-04-18 16:08:07.120 	Info 	38290024 	Waiting
+2023-04-18 16:08:07.640 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:08:07.656 	Info 	38290024-2 	MoveToPosition Requested 	Position = 1144
+2023-04-18 16:08:07.708 	Info 	38290024 	Waiting
+2023-04-18 16:08:08.231 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:08:08.240 	Info 	38290024-2 	MoveToPosition Requested 	Position = 1152
+2023-04-18 16:08:08.315 	Info 	38290024 	Waiting
+2023-04-18 16:08:08.830 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:08:08.834 	Info 	38290024-2 	MoveToPosition Requested 	Position = 1160
+2023-04-18 16:08:08.891 	Info 	38290024 	Waiting
+2023-04-18 16:08:09.409 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:08:09.417 	Info 	38290024-2 	MoveToPosition Requested 	Position = 1169
+2023-04-18 16:08:09.470 	Info 	38290024 	Waiting
+2023-04-18 16:08:09.993 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:08:10.001 	Info 	38290024-2 	MoveToPosition Requested 	Position = 1177
+2023-04-18 16:08:10.072 	Info 	38290024 	Waiting
+2023-04-18 16:08:10.580 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:08:10.585 	Info 	38290024-2 	MoveToPosition Requested 	Position = 1185
+2023-04-18 16:08:10.660 	Info 	38290024 	Waiting
+2023-04-18 16:08:11.179 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:08:11.182 	Info 	38290024-2 	MoveToPosition Requested 	Position = 1193
+2023-04-18 16:08:11.254 	Info 	38290024 	Waiting
+2023-04-18 16:08:11.773 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:08:11.776 	Info 	38290024-2 	MoveToPosition Requested 	Position = 1201
+2023-04-18 16:08:11.834 	Info 	38290024 	Waiting
+2023-04-18 16:08:12.356 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:08:12.359 	Info 	38290024-2 	MoveToPosition Requested 	Position = 1209
+2023-04-18 16:08:12.413 	Info 	38290024 	Waiting
+2023-04-18 16:08:12.928 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:08:12.932 	Info 	38290024-2 	MoveToPosition Requested 	Position = 1217
+2023-04-18 16:08:12.982 	Info 	38290024 	Waiting
+2023-04-18 16:08:13.487 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:08:13.491 	Info 	38290024-2 	MoveToPosition Requested 	Position = 1225
+2023-04-18 16:08:13.549 	Info 	38290024 	Waiting
+2023-04-18 16:08:14.069 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:08:14.076 	Info 	38290024-2 	MoveToPosition Requested 	Position = 1233
+2023-04-18 16:08:14.143 	Info 	38290024 	Waiting
+2023-04-18 16:08:14.648 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:08:14.652 	Info 	38290024-2 	MoveToPosition Requested 	Position = 1241
+2023-04-18 16:08:14.705 	Info 	38290024 	Waiting
+2023-04-18 16:08:15.222 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:08:15.226 	Info 	38290024-2 	MoveToPosition Requested 	Position = 1249
+2023-04-18 16:08:15.281 	Info 	38290024 	Waiting
+2023-04-18 16:08:15.801 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:08:15.823 	Info 	38290024-2 	MoveToPosition Requested 	Position = 1257
+2023-04-18 16:08:15.883 	Info 	38290024 	Waiting
+2023-04-18 16:08:16.400 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:08:16.429 	Info 	38290024-2 	MoveToPosition Requested 	Position = 1265
+2023-04-18 16:08:16.475 	Info 	38290024 	Waiting
+2023-04-18 16:08:16.988 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:08:16.992 	Info 	38290024-2 	MoveToPosition Requested 	Position = 1273
+2023-04-18 16:08:17.053 	Info 	38290024 	Waiting
+2023-04-18 16:08:17.578 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:08:17.582 	Info 	38290024-2 	MoveToPosition Requested 	Position = 1281
+2023-04-18 16:08:17.646 	Info 	38290024 	Waiting
+2023-04-18 16:08:18.163 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:08:18.176 	Info 	38290024-2 	MoveToPosition Requested 	Position = 1289
+2023-04-18 16:08:18.240 	Info 	38290024 	Waiting
+2023-04-18 16:08:18.758 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:08:18.763 	Info 	38290024-2 	MoveToPosition Requested 	Position = 1297
+2023-04-18 16:08:18.831 	Info 	38290024 	Waiting
+2023-04-18 16:08:19.349 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:08:19.353 	Info 	38290024-2 	MoveToPosition Requested 	Position = 1306
+2023-04-18 16:08:19.408 	Info 	38290024 	Waiting
+2023-04-18 16:08:19.923 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:08:19.926 	Info 	38290024-2 	MoveToPosition Requested 	Position = 1314
+2023-04-18 16:08:19.985 	Info 	38290024 	Waiting
+2023-04-18 16:08:20.502 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:08:20.506 	Info 	38290024-2 	MoveToPosition Requested 	Position = 1322
+2023-04-18 16:08:20.563 	Info 	38290024 	Waiting
+2023-04-18 16:08:21.099 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:08:21.109 	Info 	38290024-2 	MoveToPosition Requested 	Position = 1330
+2023-04-18 16:08:21.168 	Info 	38290024 	Waiting
+2023-04-18 16:08:21.691 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:08:21.727 	Info 	38290024-2 	MoveToPosition Requested 	Position = 1338
+2023-04-18 16:08:21.782 	Info 	38290024 	Waiting
+2023-04-18 16:08:22.299 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:08:22.308 	Info 	38290024-2 	MoveToPosition Requested 	Position = 1346
+2023-04-18 16:08:22.356 	Info 	38290024 	Waiting
+2023-04-18 16:08:22.862 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:08:22.865 	Info 	38290024-2 	MoveToPosition Requested 	Position = 1354
+2023-04-18 16:08:22.921 	Info 	38290024 	Waiting
+2023-04-18 16:08:23.440 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:08:23.443 	Info 	38290024-2 	MoveToPosition Requested 	Position = 1362
+2023-04-18 16:08:23.512 	Info 	38290024 	Waiting
+2023-04-18 16:08:24.033 	Info 	38290024 	Jog
+ 	Paddle = Paddle2
+ 	Direction = Forward
+2023-04-18 16:08:24.039 	Info 	38290024-2 	MoveToPosition Requested 	Position = 1370
+2023-04-18 16:08:24.126 	Header 	scan 2 	Completed Cycle 1
+2023-04-18 16:08:24.130 	Header 	scan 2 	Sequence Completed: Completed Cycle 1
+2023-04-18 16:08:24.633 	Header 	scan 2 	Sequence Completed
+2023-04-18 16:08:56.177 	Info 	$5377129 	WriteUserSettings - Setting Sequence_MRU was written 
+2023-04-18 16:08:56.178 	Info 	$5377129 	WriteUserSettings - Setting MRU_Size was written 
+2023-04-18 16:08:56.180 	Info 	$5377129 	WriteUserSettings - Setting MRU_List was written 
+2023-04-18 16:08:57.990 	Info 	$5377129 	WriteUserSettings - Setting Windows was written 
+2023-04-18 16:08:58.000 	Info 	$5377129 	WriteUserSettings - Setting Windows was written 
+2023-04-18 16:08:59.878 	Info 	38290024-2 	Home requested
+2023-04-18 16:09:04.178 	Info 	38290024-3 	MoveToPosition Requested 	Position = 0
+2023-04-18 16:09:10.063 	Info 	scan 2 	Set Continuous Repeat
+ 	RepeatRun = False
+ 	ContinuousRepeat = False
+ 	RepeatCount = 1
+ 	ResetTotalCycleCount = True
+2023-04-18 16:09:10.566 	Header 	scan 3 	Sequence Started
+2023-04-18 16:09:10.580 	Header 	scan 3 	Step 1 - Event
+2023-04-18 16:09:10.592 	Info 	38290024 	Waiting
+2023-04-18 16:09:13.614 	Info 	38290024 	Move Absolute
+ 	Paddle = Paddle3
+ 	Position = 0
+2023-04-18 16:09:13.620 	Info 	38290024-3 	MoveToPosition Requested 	Position = 0
+2023-04-18 16:09:13.666 	Info 	38290024 	Set Jog Size
+ 	Paddle = Paddle3
+ 	JogSize = 1
+2023-04-18 16:09:13.669 	Info 	38290024 	Set Velocity Parameters
+ 	HomePosition = 685
+ 	JogSize1 = 8
+ 	JogSize2 = 8
+ 	JogSize3 = 8
+ 	Velocity = 10
+2023-04-18 16:09:13.679 	Info 	38290024 	Waiting
+2023-04-18 16:09:14.220 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:14.260 	Info 	38290024-3 	MoveToPosition Requested 	Position = 8
+2023-04-18 16:09:14.315 	Info 	38290024 	Waiting
+2023-04-18 16:09:14.830 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:14.834 	Info 	38290024-3 	MoveToPosition Requested 	Position = 16
+2023-04-18 16:09:14.888 	Info 	38290024 	Waiting
+2023-04-18 16:09:15.396 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:15.400 	Info 	38290024-3 	MoveToPosition Requested 	Position = 24
+2023-04-18 16:09:15.467 	Info 	38290024 	Waiting
+2023-04-18 16:09:16.004 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:16.009 	Info 	38290024-3 	MoveToPosition Requested 	Position = 32
+2023-04-18 16:09:16.075 	Info 	38290024 	Waiting
+2023-04-18 16:09:16.582 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:16.606 	Info 	38290024-3 	MoveToPosition Requested 	Position = 40
+2023-04-18 16:09:16.673 	Info 	38290024 	Waiting
+2023-04-18 16:09:17.194 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:17.209 	Info 	38290024-3 	MoveToPosition Requested 	Position = 48
+2023-04-18 16:09:17.269 	Info 	38290024 	Waiting
+2023-04-18 16:09:17.789 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:17.822 	Info 	38290024-3 	MoveToPosition Requested 	Position = 56
+2023-04-18 16:09:17.878 	Info 	38290024 	Waiting
+2023-04-18 16:09:18.393 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:18.404 	Info 	38290024-3 	MoveToPosition Requested 	Position = 64
+2023-04-18 16:09:18.469 	Info 	38290024 	Waiting
+2023-04-18 16:09:18.992 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:19.001 	Info 	38290024-3 	MoveToPosition Requested 	Position = 73
+2023-04-18 16:09:19.057 	Info 	38290024 	Waiting
+2023-04-18 16:09:19.574 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:19.577 	Info 	38290024-3 	MoveToPosition Requested 	Position = 81
+2023-04-18 16:09:19.639 	Info 	38290024 	Waiting
+2023-04-18 16:09:20.158 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:20.173 	Info 	38290024-3 	MoveToPosition Requested 	Position = 89
+2023-04-18 16:09:20.225 	Info 	38290024 	Waiting
+2023-04-18 16:09:20.769 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:20.783 	Info 	38290024-3 	MoveToPosition Requested 	Position = 97
+2023-04-18 16:09:20.861 	Info 	38290024 	Waiting
+2023-04-18 16:09:21.380 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:21.388 	Info 	38290024-3 	MoveToPosition Requested 	Position = 105
+2023-04-18 16:09:21.453 	Info 	38290024 	Waiting
+2023-04-18 16:09:21.971 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:21.985 	Info 	38290024-3 	MoveToPosition Requested 	Position = 113
+2023-04-18 16:09:22.073 	Info 	38290024 	Waiting
+2023-04-18 16:09:22.580 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:22.598 	Info 	38290024-3 	MoveToPosition Requested 	Position = 121
+2023-04-18 16:09:22.655 	Info 	38290024 	Waiting
+2023-04-18 16:09:23.175 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:23.188 	Info 	38290024-3 	MoveToPosition Requested 	Position = 129
+2023-04-18 16:09:23.250 	Info 	38290024 	Waiting
+2023-04-18 16:09:23.770 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:23.777 	Info 	38290024-3 	MoveToPosition Requested 	Position = 137
+2023-04-18 16:09:23.844 	Info 	38290024 	Waiting
+2023-04-18 16:09:24.377 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:24.382 	Info 	38290024-3 	MoveToPosition Requested 	Position = 145
+2023-04-18 16:09:24.429 	Info 	38290024 	Waiting
+2023-04-18 16:09:24.939 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:24.944 	Info 	38290024-3 	MoveToPosition Requested 	Position = 153
+2023-04-18 16:09:25.025 	Info 	38290024 	Waiting
+2023-04-18 16:09:25.531 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:25.550 	Info 	38290024-3 	MoveToPosition Requested 	Position = 161
+2023-04-18 16:09:25.605 	Info 	38290024 	Waiting
+2023-04-18 16:09:26.130 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:26.133 	Info 	38290024-3 	MoveToPosition Requested 	Position = 169
+2023-04-18 16:09:26.192 	Info 	38290024 	Waiting
+2023-04-18 16:09:26.706 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:26.713 	Info 	38290024-3 	MoveToPosition Requested 	Position = 177
+2023-04-18 16:09:26.802 	Info 	38290024 	Waiting
+2023-04-18 16:09:27.319 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:27.332 	Info 	38290024-3 	MoveToPosition Requested 	Position = 185
+2023-04-18 16:09:27.380 	Info 	38290024 	Waiting
+2023-04-18 16:09:27.894 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:27.919 	Info 	38290024-3 	MoveToPosition Requested 	Position = 193
+2023-04-18 16:09:28.002 	Info 	38290024 	Waiting
+2023-04-18 16:09:28.520 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:28.523 	Info 	38290024-3 	MoveToPosition Requested 	Position = 201
+2023-04-18 16:09:28.587 	Info 	38290024 	Waiting
+2023-04-18 16:09:29.104 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:29.110 	Info 	38290024-3 	MoveToPosition Requested 	Position = 210
+2023-04-18 16:09:29.179 	Info 	38290024 	Waiting
+2023-04-18 16:09:29.702 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:29.718 	Info 	38290024-3 	MoveToPosition Requested 	Position = 218
+2023-04-18 16:09:29.770 	Info 	38290024 	Waiting
+2023-04-18 16:09:30.316 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:30.321 	Info 	38290024-3 	MoveToPosition Requested 	Position = 226
+2023-04-18 16:09:30.377 	Info 	38290024 	Waiting
+2023-04-18 16:09:30.893 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:30.897 	Info 	38290024-3 	MoveToPosition Requested 	Position = 234
+2023-04-18 16:09:30.966 	Info 	38290024 	Waiting
+2023-04-18 16:09:31.486 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:31.491 	Info 	38290024-3 	MoveToPosition Requested 	Position = 242
+2023-04-18 16:09:31.546 	Info 	38290024 	Waiting
+2023-04-18 16:09:32.064 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:32.071 	Info 	38290024-3 	MoveToPosition Requested 	Position = 250
+2023-04-18 16:09:32.125 	Info 	38290024 	Waiting
+2023-04-18 16:09:32.644 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:32.652 	Info 	38290024-3 	MoveToPosition Requested 	Position = 258
+2023-04-18 16:09:32.705 	Info 	38290024 	Waiting
+2023-04-18 16:09:33.224 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:33.256 	Info 	38290024-3 	MoveToPosition Requested 	Position = 266
+2023-04-18 16:09:33.310 	Info 	38290024 	Waiting
+2023-04-18 16:09:33.832 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:33.836 	Info 	38290024-3 	MoveToPosition Requested 	Position = 274
+2023-04-18 16:09:33.905 	Info 	38290024 	Waiting
+2023-04-18 16:09:34.426 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:34.429 	Info 	38290024-3 	MoveToPosition Requested 	Position = 282
+2023-04-18 16:09:34.479 	Info 	38290024 	Waiting
+2023-04-18 16:09:34.989 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:34.992 	Info 	38290024-3 	MoveToPosition Requested 	Position = 290
+2023-04-18 16:09:35.058 	Info 	38290024 	Waiting
+2023-04-18 16:09:35.584 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:35.591 	Info 	38290024-3 	MoveToPosition Requested 	Position = 298
+2023-04-18 16:09:35.649 	Info 	38290024 	Waiting
+2023-04-18 16:09:36.166 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:36.170 	Info 	38290024-3 	MoveToPosition Requested 	Position = 306
+2023-04-18 16:09:36.223 	Info 	38290024 	Waiting
+2023-04-18 16:09:36.753 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:36.761 	Info 	38290024-3 	MoveToPosition Requested 	Position = 314
+2023-04-18 16:09:36.820 	Info 	38290024 	Waiting
+2023-04-18 16:09:37.338 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:37.356 	Info 	38290024-3 	MoveToPosition Requested 	Position = 322
+2023-04-18 16:09:37.417 	Info 	38290024 	Waiting
+2023-04-18 16:09:37.936 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:37.957 	Info 	38290024-3 	MoveToPosition Requested 	Position = 330
+2023-04-18 16:09:38.019 	Info 	38290024 	Waiting
+2023-04-18 16:09:38.541 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:38.567 	Info 	38290024-3 	MoveToPosition Requested 	Position = 338
+2023-04-18 16:09:38.634 	Info 	38290024 	Waiting
+2023-04-18 16:09:39.151 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:39.159 	Info 	38290024-3 	MoveToPosition Requested 	Position = 347
+2023-04-18 16:09:39.224 	Info 	38290024 	Waiting
+2023-04-18 16:09:39.743 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:39.754 	Info 	38290024-3 	MoveToPosition Requested 	Position = 355
+2023-04-18 16:09:39.811 	Info 	38290024 	Waiting
+2023-04-18 16:09:40.317 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:40.332 	Info 	38290024-3 	MoveToPosition Requested 	Position = 363
+2023-04-18 16:09:40.392 	Info 	38290024 	Waiting
+2023-04-18 16:09:40.910 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:40.919 	Info 	38290024-3 	MoveToPosition Requested 	Position = 371
+2023-04-18 16:09:40.967 	Info 	38290024 	Waiting
+2023-04-18 16:09:41.488 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:41.492 	Info 	38290024-3 	MoveToPosition Requested 	Position = 379
+2023-04-18 16:09:41.558 	Info 	38290024 	Waiting
+2023-04-18 16:09:42.064 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:42.072 	Info 	38290024-3 	MoveToPosition Requested 	Position = 387
+2023-04-18 16:09:42.152 	Info 	38290024 	Waiting
+2023-04-18 16:09:42.658 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:42.662 	Info 	38290024-3 	MoveToPosition Requested 	Position = 395
+2023-04-18 16:09:42.714 	Info 	38290024 	Waiting
+2023-04-18 16:09:43.221 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:43.226 	Info 	38290024-3 	MoveToPosition Requested 	Position = 403
+2023-04-18 16:09:43.272 	Info 	38290024 	Waiting
+2023-04-18 16:09:43.812 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:43.848 	Info 	38290024-3 	MoveToPosition Requested 	Position = 411
+2023-04-18 16:09:43.904 	Info 	38290024 	Waiting
+2023-04-18 16:09:44.426 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:44.439 	Info 	38290024-3 	MoveToPosition Requested 	Position = 419
+2023-04-18 16:09:44.494 	Info 	38290024 	Waiting
+2023-04-18 16:09:45.010 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:45.015 	Info 	38290024-3 	MoveToPosition Requested 	Position = 427
+2023-04-18 16:09:45.079 	Info 	38290024 	Waiting
+2023-04-18 16:09:45.603 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:45.636 	Info 	38290024-3 	MoveToPosition Requested 	Position = 435
+2023-04-18 16:09:45.690 	Info 	38290024 	Waiting
+2023-04-18 16:09:46.206 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:46.211 	Info 	38290024-3 	MoveToPosition Requested 	Position = 443
+2023-04-18 16:09:46.263 	Info 	38290024 	Waiting
+2023-04-18 16:09:46.785 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:46.793 	Info 	38290024-3 	MoveToPosition Requested 	Position = 451
+2023-04-18 16:09:46.857 	Info 	38290024 	Waiting
+2023-04-18 16:09:47.381 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:47.386 	Info 	38290024-3 	MoveToPosition Requested 	Position = 459
+2023-04-18 16:09:47.461 	Info 	38290024 	Waiting
+2023-04-18 16:09:47.974 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:47.986 	Info 	38290024-3 	MoveToPosition Requested 	Position = 467
+2023-04-18 16:09:48.038 	Info 	38290024 	Waiting
+2023-04-18 16:09:48.556 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:48.572 	Info 	38290024-3 	MoveToPosition Requested 	Position = 475
+2023-04-18 16:09:48.632 	Info 	38290024 	Waiting
+2023-04-18 16:09:49.147 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:49.156 	Info 	38290024-3 	MoveToPosition Requested 	Position = 484
+2023-04-18 16:09:49.233 	Info 	38290024 	Waiting
+2023-04-18 16:09:49.739 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:49.742 	Info 	38290024-3 	MoveToPosition Requested 	Position = 492
+2023-04-18 16:09:49.798 	Info 	38290024 	Waiting
+2023-04-18 16:09:50.314 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:50.322 	Info 	38290024-3 	MoveToPosition Requested 	Position = 500
+2023-04-18 16:09:50.374 	Info 	38290024 	Waiting
+2023-04-18 16:09:50.897 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:50.927 	Info 	38290024-3 	MoveToPosition Requested 	Position = 508
+2023-04-18 16:09:50.991 	Info 	38290024 	Waiting
+2023-04-18 16:09:51.506 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:51.511 	Info 	38290024-3 	MoveToPosition Requested 	Position = 516
+2023-04-18 16:09:51.561 	Info 	38290024 	Waiting
+2023-04-18 16:09:52.079 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:52.083 	Info 	38290024-3 	MoveToPosition Requested 	Position = 524
+2023-04-18 16:09:52.140 	Info 	38290024 	Waiting
+2023-04-18 16:09:52.659 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:52.674 	Info 	38290024-3 	MoveToPosition Requested 	Position = 532
+2023-04-18 16:09:52.732 	Info 	38290024 	Waiting
+2023-04-18 16:09:53.253 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:53.265 	Info 	38290024-3 	MoveToPosition Requested 	Position = 540
+2023-04-18 16:09:53.325 	Info 	38290024 	Waiting
+2023-04-18 16:09:53.845 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:53.857 	Info 	38290024-3 	MoveToPosition Requested 	Position = 548
+2023-04-18 16:09:53.915 	Info 	38290024 	Waiting
+2023-04-18 16:09:54.432 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:54.451 	Info 	38290024-3 	MoveToPosition Requested 	Position = 556
+2023-04-18 16:09:54.512 	Info 	38290024 	Waiting
+2023-04-18 16:09:55.061 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:55.073 	Info 	38290024-3 	MoveToPosition Requested 	Position = 564
+2023-04-18 16:09:55.135 	Info 	38290024 	Waiting
+2023-04-18 16:09:55.644 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:55.652 	Info 	38290024-3 	MoveToPosition Requested 	Position = 572
+2023-04-18 16:09:55.712 	Info 	38290024 	Waiting
+2023-04-18 16:09:56.231 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:56.235 	Info 	38290024-3 	MoveToPosition Requested 	Position = 580
+2023-04-18 16:09:56.289 	Info 	38290024 	Waiting
+2023-04-18 16:09:56.811 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:56.816 	Info 	38290024-3 	MoveToPosition Requested 	Position = 588
+2023-04-18 16:09:56.862 	Info 	38290024 	Waiting
+2023-04-18 16:09:57.382 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:57.410 	Info 	38290024-3 	MoveToPosition Requested 	Position = 596
+2023-04-18 16:09:57.456 	Info 	38290024 	Waiting
+2023-04-18 16:09:57.974 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:57.977 	Info 	38290024-3 	MoveToPosition Requested 	Position = 604
+2023-04-18 16:09:58.032 	Info 	38290024 	Waiting
+2023-04-18 16:09:58.565 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:58.570 	Info 	38290024-3 	MoveToPosition Requested 	Position = 612
+2023-04-18 16:09:58.628 	Info 	38290024 	Waiting
+2023-04-18 16:09:59.144 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:59.163 	Info 	38290024-3 	MoveToPosition Requested 	Position = 621
+2023-04-18 16:09:59.224 	Info 	38290024 	Waiting
+2023-04-18 16:09:59.746 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:09:59.757 	Info 	38290024-3 	MoveToPosition Requested 	Position = 629
+2023-04-18 16:09:59.813 	Info 	38290024 	Waiting
+2023-04-18 16:10:00.331 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:00.338 	Info 	38290024-3 	MoveToPosition Requested 	Position = 637
+2023-04-18 16:10:00.390 	Info 	38290024 	Waiting
+2023-04-18 16:10:00.908 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:00.917 	Info 	38290024-3 	MoveToPosition Requested 	Position = 645
+2023-04-18 16:10:00.971 	Info 	38290024 	Waiting
+2023-04-18 16:10:01.490 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:01.501 	Info 	38290024-3 	MoveToPosition Requested 	Position = 653
+2023-04-18 16:10:01.553 	Info 	38290024 	Waiting
+2023-04-18 16:10:02.068 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:02.071 	Info 	38290024-3 	MoveToPosition Requested 	Position = 661
+2023-04-18 16:10:02.129 	Info 	38290024 	Waiting
+2023-04-18 16:10:02.645 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:02.648 	Info 	38290024-3 	MoveToPosition Requested 	Position = 669
+2023-04-18 16:10:02.710 	Info 	38290024 	Waiting
+2023-04-18 16:10:03.233 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:03.245 	Info 	38290024-3 	MoveToPosition Requested 	Position = 677
+2023-04-18 16:10:03.301 	Info 	38290024 	Waiting
+2023-04-18 16:10:03.807 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:03.811 	Info 	38290024-3 	MoveToPosition Requested 	Position = 685
+2023-04-18 16:10:03.874 	Info 	38290024 	Waiting
+2023-04-18 16:10:04.393 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:04.407 	Info 	38290024-3 	MoveToPosition Requested 	Position = 693
+2023-04-18 16:10:04.468 	Info 	38290024 	Waiting
+2023-04-18 16:10:05.010 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:05.015 	Info 	38290024-3 	MoveToPosition Requested 	Position = 701
+2023-04-18 16:10:05.074 	Info 	38290024 	Waiting
+2023-04-18 16:10:05.581 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:05.587 	Info 	38290024-3 	MoveToPosition Requested 	Position = 709
+2023-04-18 16:10:05.641 	Info 	38290024 	Waiting
+2023-04-18 16:10:06.159 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:06.165 	Info 	38290024-3 	MoveToPosition Requested 	Position = 717
+2023-04-18 16:10:06.226 	Info 	38290024 	Waiting
+2023-04-18 16:10:06.757 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:06.772 	Info 	38290024-3 	MoveToPosition Requested 	Position = 725
+2023-04-18 16:10:06.823 	Info 	38290024 	Waiting
+2023-04-18 16:10:07.342 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:07.346 	Info 	38290024-3 	MoveToPosition Requested 	Position = 733
+2023-04-18 16:10:07.399 	Info 	38290024 	Waiting
+2023-04-18 16:10:07.926 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:07.940 	Info 	38290024-3 	MoveToPosition Requested 	Position = 741
+2023-04-18 16:10:08.005 	Info 	38290024 	Waiting
+2023-04-18 16:10:08.520 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:08.545 	Info 	38290024-3 	MoveToPosition Requested 	Position = 749
+2023-04-18 16:10:08.604 	Info 	38290024 	Waiting
+2023-04-18 16:10:09.111 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:09.135 	Info 	38290024-3 	MoveToPosition Requested 	Position = 758
+2023-04-18 16:10:09.197 	Info 	38290024 	Waiting
+2023-04-18 16:10:09.705 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:09.710 	Info 	38290024-3 	MoveToPosition Requested 	Position = 766
+2023-04-18 16:10:09.768 	Info 	38290024 	Waiting
+2023-04-18 16:10:10.285 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:10.291 	Info 	38290024-3 	MoveToPosition Requested 	Position = 774
+2023-04-18 16:10:10.346 	Info 	38290024 	Waiting
+2023-04-18 16:10:10.877 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:10.886 	Info 	38290024-3 	MoveToPosition Requested 	Position = 782
+2023-04-18 16:10:10.940 	Info 	38290024 	Waiting
+2023-04-18 16:10:11.460 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:11.470 	Info 	38290024-3 	MoveToPosition Requested 	Position = 790
+2023-04-18 16:10:11.530 	Info 	38290024 	Waiting
+2023-04-18 16:10:12.051 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:12.060 	Info 	38290024-3 	MoveToPosition Requested 	Position = 798
+2023-04-18 16:10:12.144 	Info 	38290024 	Waiting
+2023-04-18 16:10:12.659 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:12.664 	Info 	38290024-3 	MoveToPosition Requested 	Position = 806
+2023-04-18 16:10:12.720 	Info 	38290024 	Waiting
+2023-04-18 16:10:13.237 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:13.240 	Info 	38290024-3 	MoveToPosition Requested 	Position = 814
+2023-04-18 16:10:13.306 	Info 	38290024 	Waiting
+2023-04-18 16:10:13.823 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:13.842 	Info 	38290024-3 	MoveToPosition Requested 	Position = 822
+2023-04-18 16:10:13.906 	Info 	38290024 	Waiting
+2023-04-18 16:10:14.428 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:14.432 	Info 	38290024-3 	MoveToPosition Requested 	Position = 830
+2023-04-18 16:10:14.481 	Info 	38290024 	Waiting
+2023-04-18 16:10:14.989 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:14.998 	Info 	38290024-3 	MoveToPosition Requested 	Position = 838
+2023-04-18 16:10:15.068 	Info 	38290024 	Waiting
+2023-04-18 16:10:15.583 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:15.593 	Info 	38290024-3 	MoveToPosition Requested 	Position = 846
+2023-04-18 16:10:15.650 	Info 	38290024 	Waiting
+2023-04-18 16:10:16.165 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:16.168 	Info 	38290024-3 	MoveToPosition Requested 	Position = 854
+2023-04-18 16:10:16.228 	Info 	38290024 	Waiting
+2023-04-18 16:10:16.740 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:16.786 	Info 	38290024-3 	MoveToPosition Requested 	Position = 862
+2023-04-18 16:10:16.841 	Info 	38290024 	Waiting
+2023-04-18 16:10:17.347 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:17.359 	Info 	38290024-3 	MoveToPosition Requested 	Position = 870
+2023-04-18 16:10:17.411 	Info 	38290024 	Waiting
+2023-04-18 16:10:17.956 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:17.968 	Info 	38290024-3 	MoveToPosition Requested 	Position = 878
+2023-04-18 16:10:18.025 	Info 	38290024 	Waiting
+2023-04-18 16:10:18.543 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:18.546 	Info 	38290024-3 	MoveToPosition Requested 	Position = 886
+2023-04-18 16:10:18.601 	Info 	38290024 	Waiting
+2023-04-18 16:10:19.124 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:19.135 	Info 	38290024-3 	MoveToPosition Requested 	Position = 895
+2023-04-18 16:10:19.192 	Info 	38290024 	Waiting
+2023-04-18 16:10:19.705 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:19.726 	Info 	38290024-3 	MoveToPosition Requested 	Position = 903
+2023-04-18 16:10:19.782 	Info 	38290024 	Waiting
+2023-04-18 16:10:20.299 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:20.328 	Info 	38290024-3 	MoveToPosition Requested 	Position = 911
+2023-04-18 16:10:20.377 	Info 	38290024 	Waiting
+2023-04-18 16:10:20.896 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:20.904 	Info 	38290024-3 	MoveToPosition Requested 	Position = 919
+2023-04-18 16:10:20.966 	Info 	38290024 	Waiting
+2023-04-18 16:10:21.471 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:21.501 	Info 	38290024-3 	MoveToPosition Requested 	Position = 927
+2023-04-18 16:10:21.565 	Info 	38290024 	Waiting
+2023-04-18 16:10:22.081 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:22.094 	Info 	38290024-3 	MoveToPosition Requested 	Position = 935
+2023-04-18 16:10:22.153 	Info 	38290024 	Waiting
+2023-04-18 16:10:22.660 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:22.684 	Info 	38290024-3 	MoveToPosition Requested 	Position = 943
+2023-04-18 16:10:22.728 	Info 	38290024 	Waiting
+2023-04-18 16:10:23.252 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:23.263 	Info 	38290024-3 	MoveToPosition Requested 	Position = 951
+2023-04-18 16:10:23.325 	Info 	38290024 	Waiting
+2023-04-18 16:10:23.847 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:23.858 	Info 	38290024-3 	MoveToPosition Requested 	Position = 959
+2023-04-18 16:10:23.915 	Info 	38290024 	Waiting
+2023-04-18 16:10:24.434 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:24.438 	Info 	38290024-3 	MoveToPosition Requested 	Position = 967
+2023-04-18 16:10:24.492 	Info 	38290024 	Waiting
+2023-04-18 16:10:25.013 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:25.017 	Info 	38290024-3 	MoveToPosition Requested 	Position = 975
+2023-04-18 16:10:25.070 	Info 	38290024 	Waiting
+2023-04-18 16:10:25.581 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:25.584 	Info 	38290024-3 	MoveToPosition Requested 	Position = 983
+2023-04-18 16:10:25.645 	Info 	38290024 	Waiting
+2023-04-18 16:10:26.160 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:26.164 	Info 	38290024-3 	MoveToPosition Requested 	Position = 991
+2023-04-18 16:10:26.221 	Info 	38290024 	Waiting
+2023-04-18 16:10:26.738 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:26.748 	Info 	38290024-3 	MoveToPosition Requested 	Position = 999
+2023-04-18 16:10:26.800 	Info 	38290024 	Waiting
+2023-04-18 16:10:27.318 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:27.322 	Info 	38290024-3 	MoveToPosition Requested 	Position = 1007
+2023-04-18 16:10:27.374 	Info 	38290024 	Waiting
+2023-04-18 16:10:27.878 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:27.882 	Info 	38290024-3 	MoveToPosition Requested 	Position = 1015
+2023-04-18 16:10:27.933 	Info 	38290024 	Waiting
+2023-04-18 16:10:28.450 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:28.454 	Info 	38290024-3 	MoveToPosition Requested 	Position = 1023
+2023-04-18 16:10:28.514 	Info 	38290024 	Waiting
+2023-04-18 16:10:29.034 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:29.051 	Info 	38290024-3 	MoveToPosition Requested 	Position = 1032
+2023-04-18 16:10:29.107 	Info 	38290024 	Waiting
+2023-04-18 16:10:29.613 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:29.628 	Info 	38290024-3 	MoveToPosition Requested 	Position = 1040
+2023-04-18 16:10:29.687 	Info 	38290024 	Waiting
+2023-04-18 16:10:30.194 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:30.215 	Info 	38290024-3 	MoveToPosition Requested 	Position = 1048
+2023-04-18 16:10:30.271 	Info 	38290024 	Waiting
+2023-04-18 16:10:30.787 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:30.799 	Info 	38290024-3 	MoveToPosition Requested 	Position = 1056
+2023-04-18 16:10:30.853 	Info 	38290024 	Waiting
+2023-04-18 16:10:31.378 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:31.387 	Info 	38290024-3 	MoveToPosition Requested 	Position = 1064
+2023-04-18 16:10:31.462 	Info 	38290024 	Waiting
+2023-04-18 16:10:31.972 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:31.977 	Info 	38290024-3 	MoveToPosition Requested 	Position = 1072
+2023-04-18 16:10:32.038 	Info 	38290024 	Waiting
+2023-04-18 16:10:32.550 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:32.554 	Info 	38290024-3 	MoveToPosition Requested 	Position = 1080
+2023-04-18 16:10:32.615 	Info 	38290024 	Waiting
+2023-04-18 16:10:33.134 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:33.138 	Info 	38290024-3 	MoveToPosition Requested 	Position = 1088
+2023-04-18 16:10:33.229 	Info 	38290024 	Waiting
+2023-04-18 16:10:33.737 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:33.743 	Info 	38290024-3 	MoveToPosition Requested 	Position = 1096
+2023-04-18 16:10:33.797 	Info 	38290024 	Waiting
+2023-04-18 16:10:34.315 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:34.338 	Info 	38290024-3 	MoveToPosition Requested 	Position = 1104
+2023-04-18 16:10:34.390 	Info 	38290024 	Waiting
+2023-04-18 16:10:34.895 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:34.900 	Info 	38290024-3 	MoveToPosition Requested 	Position = 1112
+2023-04-18 16:10:34.955 	Info 	38290024 	Waiting
+2023-04-18 16:10:35.476 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:35.480 	Info 	38290024-3 	MoveToPosition Requested 	Position = 1120
+2023-04-18 16:10:35.531 	Info 	38290024 	Waiting
+2023-04-18 16:10:36.036 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:36.045 	Info 	38290024-3 	MoveToPosition Requested 	Position = 1128
+2023-04-18 16:10:36.106 	Info 	38290024 	Waiting
+2023-04-18 16:10:36.628 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:36.630 	Info 	38290024-3 	MoveToPosition Requested 	Position = 1136
+2023-04-18 16:10:36.696 	Info 	38290024 	Waiting
+2023-04-18 16:10:37.206 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:37.215 	Info 	38290024-3 	MoveToPosition Requested 	Position = 1144
+2023-04-18 16:10:37.277 	Info 	38290024 	Waiting
+2023-04-18 16:10:37.783 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:37.786 	Info 	38290024-3 	MoveToPosition Requested 	Position = 1152
+2023-04-18 16:10:37.835 	Info 	38290024 	Waiting
+2023-04-18 16:10:38.346 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:38.368 	Info 	38290024-3 	MoveToPosition Requested 	Position = 1160
+2023-04-18 16:10:38.429 	Info 	38290024 	Waiting
+2023-04-18 16:10:38.943 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:38.967 	Info 	38290024-3 	MoveToPosition Requested 	Position = 1169
+2023-04-18 16:10:39.036 	Info 	38290024 	Waiting
+2023-04-18 16:10:39.551 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:39.556 	Info 	38290024-3 	MoveToPosition Requested 	Position = 1177
+2023-04-18 16:10:39.635 	Info 	38290024 	Waiting
+2023-04-18 16:10:40.147 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:40.163 	Info 	38290024-3 	MoveToPosition Requested 	Position = 1185
+2023-04-18 16:10:40.226 	Info 	38290024 	Waiting
+2023-04-18 16:10:40.745 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:40.753 	Info 	38290024-3 	MoveToPosition Requested 	Position = 1193
+2023-04-18 16:10:40.828 	Info 	38290024 	Waiting
+2023-04-18 16:10:41.351 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:41.369 	Info 	38290024-3 	MoveToPosition Requested 	Position = 1201
+2023-04-18 16:10:41.427 	Info 	38290024 	Waiting
+2023-04-18 16:10:41.956 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:41.959 	Info 	38290024-3 	MoveToPosition Requested 	Position = 1209
+2023-04-18 16:10:42.014 	Info 	38290024 	Waiting
+2023-04-18 16:10:42.533 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:42.538 	Info 	38290024-3 	MoveToPosition Requested 	Position = 1217
+2023-04-18 16:10:42.599 	Info 	38290024 	Waiting
+2023-04-18 16:10:43.118 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:43.122 	Info 	38290024-3 	MoveToPosition Requested 	Position = 1225
+2023-04-18 16:10:43.188 	Info 	38290024 	Waiting
+2023-04-18 16:10:43.705 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:43.712 	Info 	38290024-3 	MoveToPosition Requested 	Position = 1233
+2023-04-18 16:10:43.766 	Info 	38290024 	Waiting
+2023-04-18 16:10:44.284 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:44.298 	Info 	38290024-3 	MoveToPosition Requested 	Position = 1241
+2023-04-18 16:10:44.363 	Info 	38290024 	Waiting
+2023-04-18 16:10:44.880 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:44.897 	Info 	38290024-3 	MoveToPosition Requested 	Position = 1249
+2023-04-18 16:10:44.949 	Info 	38290024 	Waiting
+2023-04-18 16:10:45.473 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:45.476 	Info 	38290024-3 	MoveToPosition Requested 	Position = 1257
+2023-04-18 16:10:45.527 	Info 	38290024 	Waiting
+2023-04-18 16:10:46.035 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:46.043 	Info 	38290024-3 	MoveToPosition Requested 	Position = 1265
+2023-04-18 16:10:46.126 	Info 	38290024 	Waiting
+2023-04-18 16:10:46.646 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:46.650 	Info 	38290024-3 	MoveToPosition Requested 	Position = 1273
+2023-04-18 16:10:46.707 	Info 	38290024 	Waiting
+2023-04-18 16:10:47.225 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:47.231 	Info 	38290024-3 	MoveToPosition Requested 	Position = 1281
+2023-04-18 16:10:47.281 	Info 	38290024 	Waiting
+2023-04-18 16:10:47.800 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:47.803 	Info 	38290024-3 	MoveToPosition Requested 	Position = 1289
+2023-04-18 16:10:47.885 	Info 	38290024 	Waiting
+2023-04-18 16:10:48.409 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:48.429 	Info 	38290024-3 	MoveToPosition Requested 	Position = 1297
+2023-04-18 16:10:48.478 	Info 	38290024 	Waiting
+2023-04-18 16:10:48.991 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:48.995 	Info 	38290024-3 	MoveToPosition Requested 	Position = 1306
+2023-04-18 16:10:49.054 	Info 	38290024 	Waiting
+2023-04-18 16:10:49.582 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:49.588 	Info 	38290024-3 	MoveToPosition Requested 	Position = 1314
+2023-04-18 16:10:49.648 	Info 	38290024 	Waiting
+2023-04-18 16:10:50.171 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:50.193 	Info 	38290024-3 	MoveToPosition Requested 	Position = 1322
+2023-04-18 16:10:50.277 	Info 	38290024 	Waiting
+2023-04-18 16:10:50.797 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:50.813 	Info 	38290024-3 	MoveToPosition Requested 	Position = 1330
+2023-04-18 16:10:50.866 	Info 	38290024 	Waiting
+2023-04-18 16:10:51.395 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:51.412 	Info 	38290024-3 	MoveToPosition Requested 	Position = 1338
+2023-04-18 16:10:51.470 	Info 	38290024 	Waiting
+2023-04-18 16:10:51.986 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:51.991 	Info 	38290024-3 	MoveToPosition Requested 	Position = 1346
+2023-04-18 16:10:52.048 	Info 	38290024 	Waiting
+2023-04-18 16:10:52.566 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:52.589 	Info 	38290024-3 	MoveToPosition Requested 	Position = 1354
+2023-04-18 16:10:52.642 	Info 	38290024 	Waiting
+2023-04-18 16:10:53.158 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:53.179 	Info 	38290024-3 	MoveToPosition Requested 	Position = 1362
+2023-04-18 16:10:53.261 	Info 	38290024 	Waiting
+2023-04-18 16:10:53.785 	Info 	38290024 	Jog
+ 	Paddle = Paddle3
+ 	Direction = Forward
+2023-04-18 16:10:53.789 	Info 	38290024-3 	MoveToPosition Requested 	Position = 1370
+2023-04-18 16:10:53.854 	Header 	scan 3 	Completed Cycle 1
+2023-04-18 16:10:53.857 	Header 	scan 3 	Sequence Completed: Completed Cycle 1
+2023-04-18 16:10:54.360 	Header 	scan 3 	Sequence Completed
+2023-04-18 16:12:52.952 	Info 	$301100 	Loaded Device Settings
+ 	SettingsName = Polarization Controller
+ 	DeviceAlias = 
+ 	DeviceData = 3
+ 	CollateLogging = False
+ 	OutputDebugMask = StdOutput
+ 	OutputLogMask = StdLogging
+ 	LoadSettingsOption = UseFileSettings
+2023-04-18 16:12:52.962 	Info 	$301113 	Saving Device Configurations 	Device = 38290024
+2023-04-18 16:12:52.994 	Info 	$301101 	Saved Device Settings
+ 	SettingsName = Polarization Controller
+ 	DeviceAlias = 
+ 	DeviceData = 3
+ 	CollateLogging = False
+ 	OutputDebugMask = StdOutput
+ 	OutputLogMask = StdLogging
+ 	LoadSettingsOption = UseFileSettings
+2023-04-18 16:12:53.074 	Info 	$5377129 	WriteUserSettings - Setting AppConfig was written 
+2023-04-18 16:12:53.086 	Info 	$5377129 	WriteUserSettings - Setting Windows was written 
+
