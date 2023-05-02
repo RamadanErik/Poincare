@@ -3,12 +3,12 @@ import pandas as pd
 
 #Módosítandók:
 
-mappa = 'B:/egyetem/6_hatodik_félév/Önlab/meresek_eredmenye/'
+mappa = 'C:/Users/KNL2022/Documents/Thorlabs/PAX1000/'
 
 file1 = 'masodik.csv'
 file2 = 'EventLog -20230425-031523_2.Log'
 
-file_ki = 'B:/egyetem/6_hatodik_félév/Önlab/meresek_eredmenye/masodik_plate.xlsx'
+file_ki = 'C:/Users/KNL2022/Documents/Thorlabs/PAX1000/masodik_plate.csv'
 
 
 ####################
@@ -50,9 +50,9 @@ lst_mert=[]
 for index, row in df.iterrows():
     t = row['Time[date hh:mm:ss] ']
     s0 = row[' S 0 [mW]']
-    s1 = row[' S 0 [mW]']
-    s2 = row[' S 0 [mW]']
-    s3 = row[' S 0 [mW]']
+    s1 = row[' S 1 [mW]']
+    s2 = row[' S 2 [mW]']
+    s3 = row[' S 3 [mW]']
     ido = t.split(" ")
     idopont = ido[1].split(":")
     idopont_szam = int(idopont[0])*3600+int(idopont[1])*60+float(idopont[2])
@@ -76,6 +76,6 @@ for i in range(len(lst_rot)):
 dfki = pd.DataFrame(lst_rot, columns=['Időpont','Pozíció','Fok','S0','S1','S2','S3'])
 
 
-writer = pd.ExcelWriter(file_ki)
-dfki.to_excel(writer, sheet_name='Adatok')
-writer.close()
+#writer = pd.ExcelWriter(file_ki)
+dfki.to_csv(file_ki)
+#writer.close()
