@@ -47,7 +47,7 @@ time.sleep(2)
 
 # Make settings
 lib.TLPAX_setMeasurementMode(instrumentHandle, 9)
-lib.TLPAX_setWavelength(instrumentHandle, c_double(633e-9))
+lib.TLPAX_setWavelength(instrumentHandle, c_double(1550e-9))  #hullámhossz beállítás
 lib.TLPAX_setBasicScanRate(instrumentHandle, c_double(60))
 
 # Check settings
@@ -65,6 +65,9 @@ print("")
 # Short break
 time.sleep(5)
 
+
+### Kész a kapcsolódás ###
+
 # Take 5 measurements and output values
 for x in range (5):
     revolutionCounter = c_int()
@@ -78,11 +81,11 @@ for x in range (5):
     print("Azimuth [rad]: ", azimuth.value)
     print("Ellipticity [rad]: ", ellipticity.value)
     print("")
-    S0 = c_double()
-    S1 = c_double()
-    S2 = c_double()
-    S3 = c_double()
-    lib.TLPAX_getStokes(instrumentHandle, scanID.value, byref(S0), byref(S1), byref(S2), byref(S3))
+    S0 = c_double() ### fontos sor
+    S1 = c_double() ### fontos sor
+    S2 = c_double() ### fontos sor
+    S3 = c_double() ### fontos sor
+    lib.TLPAX_getStokes(instrumentHandle, scanID.value, byref(S0), byref(S1), byref(S2), byref(S3))  ### fontos sor
     print(f"Svec= {S0.value}, {S1.value}, {S2.value}, {S3.value}")
     lib.TLPAX_releaseScan(instrumentHandle, scanID)
     time.sleep(0.5)
