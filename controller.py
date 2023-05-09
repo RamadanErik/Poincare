@@ -22,12 +22,13 @@ def main():
     """The main entry point for the application"""
 
     # Uncomment this line if you are using
-    SimulationManager.Instance.InitializeSimulations()
+    #SimulationManager.Instance.InitializeSimulations()
 
     try:
         #print(GenericMotorCLI.ControlParameters.JogParametersBase.JogModes.SingleStep)
         # Create new device
-        serial_no = str("38000002")
+        #serial_no = str("38000001")
+        serial_no = str("38290024") #Eszköz
 
         DeviceManagerCLI.BuildDeviceList()
 
@@ -68,7 +69,7 @@ def main():
         # print("Homing Actuator")
         # device.Home(60000)  # 10s timeout, blocking call
         #
-        f = 13.0
+        f = 0
         d = Decimal(f)
         # print(f'Device Homed. Moving to position {f}')
         # device.MoveTo(d, 60000)  # 10s timeout again
@@ -77,12 +78,12 @@ def main():
         # print(f'Device now at position {device.Position}')
         # time.sleep(1)
 
-        paddle = PolarizerPaddles.Paddle1
+        paddle = PolarizerPaddles.Paddle2
         print("mozgatas")
         device.MoveTo(d, paddle, 60000)
         time.sleep(1)
         print("Mozgatas2")
-        device.Home(paddle,60000)
+        #device.Home(paddle,60000)
 
         device.StopPolling()
         device.Disconnect(True)

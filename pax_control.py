@@ -49,6 +49,8 @@ time.sleep(2)
 lib.TLPAX_setMeasurementMode(instrumentHandle, 9)
 lib.TLPAX_setWavelength(instrumentHandle, c_double(1550e-9))  #hullámhossz beállítás
 lib.TLPAX_setBasicScanRate(instrumentHandle, c_double(60))
+lib.TLPAX_setPowerRange(instrumentHandle, c_double(0.01));
+
 
 # Check settings
 wavelength = c_double()
