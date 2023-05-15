@@ -9,24 +9,24 @@ import random
 
 #eta = np.pi / 2  # EZT KELL VÁLTOZTATNI
 
-hiba1 = 1.2  # EZT KELL VÁLTOZTATNI  pi/2 --> lambda/4
-hiba2 = 0  # EZT KELL VÁLTOZTATNI
-hiba3 = 0  # EZT KELL VÁLTOZTATNI
+hiba1 = 0.8  # EZT KELL VÁLTOZTATNI  pi/2 --> lambda/4
+hiba2 = 1 # EZT KELL VÁLTOZTATNI
+hiba3 = -0.6  # EZT KELL VÁLTOZTATNI
 
-felbontas = 3500
-pontossag = 3500
+felbontas = 9000
+pontossag = 100
 tureshatar = 0.15**2
 #tureshatar = (100 / 2000.0) ** 2
 
-#alfa = np.pi / 3
+alfa = np.pi / 3.26
 
 # feny = np.array([[1], [0]])  # LHP
 # feny = np.array([[0],[1]]) #LVP
 # feny = 1/np.sqrt(2)*np.array([[1],[1]]) #+45
 # feny = 1/np.sqrt(2)*np.array([[1],[-1]]) #-45
 # feny = 1/np.sqrt(2)*np.array([[1],[-1j]]) #RCP
-feny = 1/np.sqrt(2)*np.array([[1],[1j]]) #LCP
-# feny = np.array([[np.cos(alfa)], [np.sin(alfa)]])
+# feny = 1/np.sqrt(2)*np.array([[1],[1j]]) #LCP
+feny = np.array([[np.cos(alfa)], [np.sin(alfa)]])
 
 
 
@@ -101,7 +101,57 @@ def lefedett_felszin(S):   #Ezt át kell nézni!
 
     return (sum(count) / (pontossag) * 100)
 
+def tesztkirajzolas():
 
+    x = []
+    y = []
+    z = []
+    theta = np.arccos((2 * np.random.rand(pontossag) - 1))
+    phi = 2 * np.pi * np.random.rand(pontossag)
+    for i in range(pontossag):
+        x.append((np.sin(theta[i]) * np.cos(phi[i])).item())
+        y.append((np.sin(theta[i]) * np.sin(phi[i])).item())
+        z.append((np.cos(theta[i])).item())
+
+    # Create a 3D plot
+    fig = plt.figure()
+    ax = fig.add_subplot(111, projection='3d')
+
+    # Set the limits of the plot
+    ax.set_xlim(-1, 1)
+    ax.set_ylim(-1, 1)
+    ax.set_zlim(-1, 1)
+    ax.set_xticks([-1, 0, 1])
+    ax.set_yticks([-1, 0, 1])
+    ax.set_zticks([-1, 0, 1])
+
+    ax.set_xticklabels(['-1', '0', '1'])
+    ax.set_yticklabels(['-1', '0', '1'])
+    ax.set_zticklabels(['-1', '0', '1'])
+
+    # Plot the sphere
+    u, v = np.mgrid[0:2 * np.pi:20j, 0:np.pi:10j]
+    x_sphere = np.cos(u) * np.sin(v)
+    y_sphere = np.sin(u) * np.sin(v)
+    z_sphere = np.cos(v)
+    ax.plot_surface(x_sphere, y_sphere, z_sphere, alpha=0.1)
+
+    ax.set_xlabel('S2')
+    ax.set_ylabel('S3')
+    ax.set_zlabel('S1')
+
+    # Szinezes
+    colors = np.linspace(0, 1, len(x))
+    colormap = plt.cm.ScalarMappable(cmap='seismic')
+    # colormap = plt.cm.ScalarMappable(cmap='hsv')
+    # colormap = plt.cm.ScalarMappable(cmap='cool')
+    ax.scatter(x, y, z, c=colormap.to_rgba(colors), s=1)
+    a = f"Tesztpontok ({pontossag} db)"
+    plt.title(a)
+
+
+
+    return
 
 x = np.random.rand(pontossag,3)
 theta = np.arccos((2 * np.random.rand(pontossag) - 1))
@@ -180,8 +230,7 @@ ax.scatter(x, y, z, c=colormap.to_rgba(colors), s=1)
 
 
 
-a = "[ " + str(np.around(feny[0], 4)) + " , " + str(
-    np.around(feny[1], 4)) + " ]"
+a = f"A bemenő fény Jones vektora: {np.array([np.around(feny[0], 4),np.around(feny[1], 4)]).T}"
 plt.title(a)
 
 
@@ -190,5 +239,12 @@ plt.title(a)
 
 lef = lefedett_felszin(S)
 print(str(round(lef, 2)) + "%-a van lefedve")
+
+
+plt.savefig(f'Szimulacio_{np.array([np.around(feny[0], 4),np.around(feny[1], 4)]).T}_{round(eta1+hiba1,2)}_{round(eta2+hiba2,2)}_{round(eta3+hiba3,2)}.svg', format='svg',transparent=True)
+ax.view_init(azim=30)
+plt.savefig(f'Szimulacio_{np.array([np.around(feny[0], 4),np.around(feny[1], 4)]).T}_{round(eta1+hiba1,2)}_{round(eta2+hiba2,2)}_{round(eta3+hiba3,2)}_2.svg', format='svg',transparent=True)
+tesztkirajzolas()
+#plt.savefig(f"Tesztpontok_{pontossag}.svg",format='svg',transparent=True)
 
 plt.show()

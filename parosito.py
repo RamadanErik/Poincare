@@ -3,12 +3,12 @@ import pandas as pd
 
 #Módosítandók:
 
-mappa = 'C:/Users/KNL2022/Documents/Thorlabs/PAX1000/'
+mappa = 'B:/egyetem/6_hatodik_félév/Önlab/meresek_eredmenye/'
 
-file1 = 'masodik.csv'
-file2 = 'EventLog -20230425-031523_2.Log'
+file1 = 'harmadik.csv'
+file2 = 'EventLog -20230425-031914_3.Log'
 
-file_ki = 'C:/Users/KNL2022/Documents/Thorlabs/PAX1000/masodik_plate.csv'
+file_ki = 'B:/egyetem/6_hatodik_félév/Önlab/meresek_eredmenye/harmadik_plate.csv'
 
 
 ####################
