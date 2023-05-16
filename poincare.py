@@ -10,8 +10,8 @@ import random
 #eta = np.pi / 2  # EZT KELL VÁLTOZTATNI
 
 hiba1 = 0.8  # EZT KELL VÁLTOZTATNI  pi/2 --> lambda/4
-hiba2 = 1 # EZT KELL VÁLTOZTATNI
-hiba3 = -0.6  # EZT KELL VÁLTOZTATNI
+hiba2 = -np.pi+0.3 # EZT KELL VÁLTOZTATNI
+hiba3 = -np.pi/2  # EZT KELL VÁLTOZTATNI
 
 felbontas = 9000
 pontossag = 100
@@ -245,6 +245,6 @@ plt.savefig(f'Szimulacio_{np.array([np.around(feny[0], 4),np.around(feny[1], 4)]
 ax.view_init(azim=30)
 plt.savefig(f'Szimulacio_{np.array([np.around(feny[0], 4),np.around(feny[1], 4)]).T}_{round(eta1+hiba1,2)}_{round(eta2+hiba2,2)}_{round(eta3+hiba3,2)}_2.svg', format='svg',transparent=True)
 tesztkirajzolas()
-#plt.savefig(f"Tesztpontok_{pontossag}.svg",format='svg',transparent=True)
+plt.savefig(f"Tesztpontok_{pontossag}.svg",format='svg',transparent=True)
 
 plt.show()

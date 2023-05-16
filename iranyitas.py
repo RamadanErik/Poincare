@@ -5,6 +5,7 @@ from ctypes import *
 import time
 import clr
 import numpy as np
+import matplotlib.pyplot as plt
 import sys
 
 
@@ -26,10 +27,18 @@ def Sdif(S1, S2):
 def optimum(device, lib,instrumentHandle, S_cel,paddle,tart_eleje,tart_vege,lepeskoz):
     minimum_fok = -1
     minimum_hiba = -1
-    lepesek = (tart_vege-tart_eleje) / lepeskoz
-    for i in range(int(lepesek)+1):
-        d = Decimal(i * lepeskoz )
+    lepesek = int((tart_vege-tart_eleje) / lepeskoz+1)
+    kapcs=0
+
+    x = []
+    y = []
+    z = []
+    for i in np.linspace(tart_eleje, tart_vege, lepesek):
+        d = Decimal(i)
         device.MoveTo(d, paddle, 60000)
+        if(kapcs==0):
+            kapcs=1
+            time.sleep(0.5)
         time.sleep(0.1)
         revolutionCounter = c_int()
         scanID = c_int()
@@ -45,14 +54,71 @@ def optimum(device, lib,instrumentHandle, S_cel,paddle,tart_eleje,tart_vege,lepe
         time.sleep(0.5)
 
         S = np.array([S1.value, S2.value, S3.value])
+
+        "-----kirajzoláshoz-----"
+        x.append((S[0]).item())
+        y.append((S[1]).item())
+        z.append((S[2]).item())
+        "----------------------"
+
+
         hiba = Sdif(S, S_cel)
-        print(f"{i*lepeskoz} foknál a hiba: {hiba}")
+        print(f"{i} foknál a hiba: {hiba}")
         if (hiba < minimum_hiba or minimum_fok==-1):
             minimum_hiba=hiba
-            minimum_fok=i*lepeskoz
+            minimum_fok=i
 
-    return minimum_fok
+    return [minimum_fok,x,y,z]
 
+def uj_min(a,mennyivel):
+    c=a-mennyivel
+    if(c<0):
+        c=0
+    return c
+
+def uj_max(a,mennyivel):
+    c=a+mennyivel
+    if(c>170):
+        c=170
+    return c
+
+def rajz(x,y,z):  #EZ ÚJ dolog
+    # Create a 3D plot
+    fig = plt.figure()
+    ax = fig.add_subplot(111, projection='3d')
+
+    # Set the limits of the plot
+    ax.set_xlim(-1, 1)
+    ax.set_ylim(-1, 1)
+    ax.set_zlim(-1, 1)
+    ax.set_xticks([-1, 0, 1])
+    ax.set_yticks([-1, 0, 1])
+    ax.set_zticks([-1, 0, 1])
+
+    ax.set_xticklabels(['-1', '0', '1'])
+    ax.set_yticklabels(['-1', '0', '1'])
+    ax.set_zticklabels(['-1', '0', '1'])
+
+    # Plot the sphere
+    u, v = np.mgrid[0:2 * np.pi:20j, 0:np.pi:10j]
+    x_sphere = np.cos(u) * np.sin(v)
+    y_sphere = np.sin(u) * np.sin(v)
+    z_sphere = np.cos(v)
+    ax.plot_surface(x_sphere, y_sphere, z_sphere, alpha=0.1)
+
+    ax.set_xlabel('S2')
+    ax.set_ylabel('S3')
+    ax.set_zlabel('S1')
+
+    # Szinezes
+    colors = np.linspace(0, 1, len(x))
+    # colormap = plt.cm.ScalarMappable(cmap='seismic')
+    # colormap = plt.cm.ScalarMappable(cmap='hsv')
+    colormap = plt.cm.ScalarMappable(cmap='cool')
+    ax.scatter(x, y, z, c=colormap.to_rgba(colors), s=1)
+
+    plt.show()
+    return
 def main():
     """--------------------------------Polariméter-----------------------------"""
     # Load DLL library
@@ -177,46 +243,81 @@ def main():
 
 
         """------------------------------------------------VEZÉRLÉS-------------------------------------------"""
-        S_cel = Svec(np.pi/2,0)
+        S_cel = Svec(0,-np.pi/2)
         print(S_cel)
         d = Decimal(0)
         paddle = PolarizerPaddles.Paddle2
         device.MoveTo(d, paddle, 60000)
-        paddle = PolarizerPaddles.Paddle1
+        paddle = PolarizerPaddles.Paddle1 
         device.MoveTo(d, paddle, 60000)
         paddle = PolarizerPaddles.Paddle3
         device.MoveTo(d, paddle, 60000)
 
         print("Vezérlés:\n")
-        for i in range(1):
-            lepeskoz = 5
+        min1=0
+        max1=170
+        min2 = 0
+        max2 = 170
+        min3 = 0
+        max3 = 170
+        lepeskoz = 10
+        revolutionCounter = c_int()
+        scanID = c_int()
+
+        S1 = c_double()  ### fontos sor
+        S2 = c_double()  ### fontos sor
+        S3 = c_double()  ### fontos sor
+        for i in range(3):
+
             paddle = PolarizerPaddles.Paddle2
-            opt1 = optimum(device, lib,instrumentHandle, S_cel,paddle,0,170,lepeskoz)
+            lista = optimum(device, lib,instrumentHandle, S_cel,paddle,min1,max1,lepeskoz)
+            opt1 = lista[0]
+            rajz(lista[1],lista[2],lista[3])
             d = Decimal(opt1)
             device.MoveTo(d,paddle,60000)
             print(f"Paddle2 optimum: {opt1} fok")
 
-            paddle = PolarizerPaddles.Paddle1
-            opt2 = optimum(device, lib, instrumentHandle, S_cel, paddle, 0, 170, lepeskoz)
-            d = Decimal(opt2)
-            device.MoveTo(d, paddle, 60000)
-            print(f"Paddle1 optimum: {opt2} fok")
 
             paddle = PolarizerPaddles.Paddle3
-            opt3 = optimum(device, lib, instrumentHandle, S_cel, paddle, 0, 170, lepeskoz)
+            opt3 = optimum(device, lib, instrumentHandle, S_cel, paddle, min3,max3, lepeskoz)[0]
             d = Decimal(opt3)
             device.MoveTo(d, paddle, 60000)
             print(f"Paddle3 optimum: {opt3} fok")
 
+            paddle = PolarizerPaddles.Paddle1
+            opt2 = optimum(device, lib, instrumentHandle, S_cel, paddle, min2, max2, lepeskoz)[0]
+            d = Decimal(opt2)
+            device.MoveTo(d, paddle, 60000)
+            print(f"Paddle1 optimum: {opt2} fok")
 
-        revolutionCounter = c_int()
-        scanID = c_int()
+            min1 = uj_min(opt1,lepeskoz)
+            min2 = uj_min(opt2, lepeskoz)
+            min3 = uj_min(opt3, lepeskoz)
+            max1 = uj_max(opt1,lepeskoz)
+            max2 = uj_max(opt2, lepeskoz)
+            max3 = uj_max(opt3, lepeskoz)
+
+            lepeskoz/=5
+
+            lib.TLPAX_getLatestScan(instrumentHandle, byref(scanID))
+            lib.TLPAX_getStokesNormalized(instrumentHandle, scanID.value, byref(S1), byref(S2),
+                                          byref(S3))  ### fontos sor
+            # print(f"Svec=  {S1.value}, {S2.value}, {S3.value}\n")
+            lib.TLPAX_releaseScan(instrumentHandle, scanID)
+            time.sleep(0.5)
+
+            S = np.array([S1.value, S2.value, S3.value])
+            hiba = Sdif(S, S_cel)
+            print(f"Pozíció: {opt1}, {opt2}, {opt3}")
+            print(f"Hiba: {hiba}")
+
+
+
+
+
+
+
         lib.TLPAX_getLatestScan(instrumentHandle, byref(scanID))
-        # S0 = c_double()  ### fontos sor
-        S1 = c_double()  ### fontos sor
-        S2 = c_double()  ### fontos sor
-        S3 = c_double()  ### fontos sor
-
         lib.TLPAX_getStokesNormalized(instrumentHandle, scanID.value, byref(S1), byref(S2), byref(S3))  ### fontos sor
         # print(f"Svec=  {S1.value}, {S2.value}, {S3.value}\n")
         lib.TLPAX_releaseScan(instrumentHandle, scanID)
