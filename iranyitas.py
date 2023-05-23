@@ -75,64 +75,66 @@ def optimum(device, lib,instrumentHandle, S_cel,paddle,tart_eleje,tart_vege,lepe
 def optimum_rand(device, lib,instrumentHandle, S_cel,paddle1,paddle2,paddle3,pontok):
     kapcs=-1
     minimum_fokok = -1
-    minimum_hiba = -1
+    minimum_hiba = 3
 
     rosszfokok=[]
     x = []
     y = []
     z = []
-    fokok = np.random.rand(pontok,3)*170
-    for i in range(pontok):
-        fok1=int(fokok[i,0])
-        fok2=int(fokok[i,1])
-        fok3=int(fokok[i,2])
-        rossz=False
-        for j in range(len(rosszfokok)):
-            if (abs(fok1-rosszfokok[j][0])<20 and abs(fok2-rosszfokok[j][1])<20 and abs(fok3-rosszfokok[j][2])<20 ):
-                i-=1
-                rossz=True
-                break
-        if(not rossz):
-            d1 = Decimal(fok1)
-            d2 = Decimal(fok2)
-            d3 = Decimal(fok3)
 
-            device.MoveTo(d1, paddle1, 60000)
-            device.MoveTo(d2, paddle2, 60000)
-            device.MoveTo(d3, paddle3, 60000)
+    while minimum_hiba > 0.6:
+        fokok = np.random.rand(pontok,3)*170
+        for i in range(pontok):
+            fok1=int(fokok[i,0])
+            fok2=int(fokok[i,1])
+            fok3=int(fokok[i,2])
+            rossz=False
+            for j in range(len(rosszfokok)):
+                if (abs(fok1-rosszfokok[j][0])<20 and abs(fok2-rosszfokok[j][1])<20 and abs(fok3-rosszfokok[j][2])<20 ):
+                    i-=1
+                    rossz=True
+                    break
+            if(not rossz):
+                d1 = Decimal(fok1)
+                d2 = Decimal(fok2)
+                d3 = Decimal(fok3)
 
-            time.sleep(0.1)
-            revolutionCounter = c_int()
-            scanID = c_int()
-            time.sleep(1.5)
-            lib.TLPAX_getLatestScan(instrumentHandle, byref(scanID))
-            # S0 = c_double()  ### fontos sor
-            S1 = c_double()  ### fontos sor
-            S2 = c_double()  ### fontos sor
-            S3 = c_double()  ### fontos sor
+                device.MoveTo(d1, paddle1, 60000)
+                device.MoveTo(d2, paddle2, 60000)
+                device.MoveTo(d3, paddle3, 60000)
 
-            lib.TLPAX_getStokesNormalized(instrumentHandle, scanID.value, byref(S1), byref(S2), byref(S3))  ### fontos sor
-            # print(f"Svec=  {S1.value}, {S2.value}, {S3.value}\n")
-            lib.TLPAX_releaseScan(instrumentHandle, scanID)
+                time.sleep(0.1)
+                revolutionCounter = c_int()
+                scanID = c_int()
+                time.sleep(1.5)
+                lib.TLPAX_getLatestScan(instrumentHandle, byref(scanID))
+                # S0 = c_double()  ### fontos sor
+                S1 = c_double()  ### fontos sor
+                S2 = c_double()  ### fontos sor
+                S3 = c_double()  ### fontos sor
 
-
-            S = np.array([S1.value, S2.value, S3.value])
-
-            "-----kirajzoláshoz-----"
-            x.append((S[0]).item())
-            y.append((S[1]).item())
-            z.append((S[2]).item())
-            "----------------------"
+                lib.TLPAX_getStokesNormalized(instrumentHandle, scanID.value, byref(S1), byref(S2), byref(S3))  ### fontos sor
+                # print(f"Svec=  {S1.value}, {S2.value}, {S3.value}\n")
+                lib.TLPAX_releaseScan(instrumentHandle, scanID)
 
 
-            hiba = Sdif(S, S_cel)
-            print(f"{i+1}. vizsgálat: {fok1},{fok2},{fok3} fokoknál a hiba: {round(hiba,5)}")
-            if (hiba < minimum_hiba or kapcs==-1):
-                kapcs=1
-                minimum_hiba=hiba
-                minimum_fokok=fokok[i]
-            if (hiba > 1.5 ):
-                rosszfokok.append([fok1,fok2,fok3])
+                S = np.array([S1.value, S2.value, S3.value])
+
+                "-----kirajzoláshoz-----"
+                x.append((S[0]).item())
+                y.append((S[1]).item())
+                z.append((S[2]).item())
+                "----------------------"
+
+
+                hiba = Sdif(S, S_cel)
+                print(f"{i+1}. vizsgálat: {fok1},{fok2},{fok3} fokoknál a hiba: {round(hiba,5)}")
+                if (hiba < minimum_hiba or kapcs==-1):
+                    kapcs=1
+                    minimum_hiba=hiba
+                    minimum_fokok=fokok[i]
+                if (hiba > 1 ):
+                    rosszfokok.append([fok1,fok2,fok3])
 
     return [minimum_fokok,x,y,z]
 
@@ -311,10 +313,11 @@ def main():
 
 
         """------------------------------------------------VEZÉRLÉS-------------------------------------------"""
-        S_cel = Svec(np.pi,np.pi/2)
+        S_cel = Svec(np.pi/2,np.pi/2)
+        random_pontok_szama=10
         print(S_cel)
 
-        #0-ba állítás
+        "-------------0-ba állítás (ha kell)-----------------------"
         # d = Decimal(0)
         # paddle = PolarizerPaddles.Paddle2
         # device.MoveTo(d, paddle, 60000)
@@ -322,6 +325,13 @@ def main():
         # device.MoveTo(d, paddle, 60000)
         # paddle = PolarizerPaddles.Paddle3
         # device.MoveTo(d, paddle, 60000)
+        # min1=0
+        # min2=0
+        # min3=0
+        # max1=170
+        # max2=170
+        # max3=170
+        "--------------------------------------------------------"
 
         paddle1 = PolarizerPaddles.Paddle1
         paddle2 = PolarizerPaddles.Paddle2
@@ -330,7 +340,7 @@ def main():
 
         print("Random pontokra beállítás")
         "Random helyekre beállítások"
-        lista = optimum_rand(device,lib,instrumentHandle,S_cel,paddle1,paddle2,paddle3,5)
+        lista = optimum_rand(device,lib,instrumentHandle,S_cel,paddle1,paddle2,paddle3,random_pontok_szama)
 
         opt1=int(lista[0][0])
         opt2=int(lista[0][1])
@@ -347,14 +357,14 @@ def main():
         print(f"Optimum eddig: {round(opt1,2)},{round(opt2,2)},{round(opt3,2)} ")
         lepeskoz = 10
 
-        min1 = uj_min(opt1, lepeskoz)
-        min2 = uj_min(opt2, lepeskoz)
-        min3 = uj_min(opt3, lepeskoz)
-        max1 = uj_max(opt1, lepeskoz)
-        max2 = uj_max(opt2, lepeskoz)
-        max3 = uj_max(opt3, lepeskoz)
-
-        lepeskoz/=5
+        # min1 = uj_min(opt1, lepeskoz)
+        # min2 = uj_min(opt2, lepeskoz)
+        # min3 = uj_min(opt3, lepeskoz)
+        # max1 = uj_max(opt1, lepeskoz)
+        # max2 = uj_max(opt2, lepeskoz)
+        # max3 = uj_max(opt3, lepeskoz)
+        #
+        # lepeskoz/=5
 
         revolutionCounter = c_int()
         scanID = c_int()
@@ -362,7 +372,7 @@ def main():
         S1 = c_double()  ### fontos sor
         S2 = c_double()  ### fontos sor
         S3 = c_double()  ### fontos sor
-        for i in range(2):
+        for i in range(3):
 
             paddle = PolarizerPaddles.Paddle2
             lista = optimum(device, lib,instrumentHandle, S_cel,paddle,min2,max2,lepeskoz)
@@ -380,6 +390,7 @@ def main():
             d = Decimal(opt3)
             device.MoveTo(d, paddle, 60000)
             print(f"Paddle3 optimum: {opt3} fok")
+
 
             paddle = PolarizerPaddles.Paddle1
             lista = optimum(device, lib, instrumentHandle, S_cel, paddle, min1, max1, lepeskoz)
