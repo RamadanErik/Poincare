@@ -7,8 +7,13 @@ import clr
 import numpy as np
 import matplotlib
 import matplotlib.pyplot as plt
+import datetime
+
 matplotlib.use('TkAgg')
 import sys
+
+idokezdet = datetime.datetime.now()
+
 
 
 clr.AddReference("C:\\Program Files\\Thorlabs\\Kinesis\\Thorlabs.MotionControl.DeviceManagerCLI.dll")
@@ -35,6 +40,8 @@ def optimum(device, lib,instrumentHandle, S_cel,paddle,tart_eleje,tart_vege,lepe
     x = []
     y = []
     z = []
+
+
     for i in np.linspace(tart_eleje, tart_vege, lepesek):
         d = Decimal(i)
         device.MoveTo(d, paddle, 60000)
@@ -81,8 +88,8 @@ def optimum_rand(device, lib,instrumentHandle, S_cel,paddle1,paddle2,paddle3,pon
     x = []
     y = []
     z = []
-
-    while minimum_hiba > 0.6:
+    i2=1
+    while minimum_hiba > 0.4:
         fokok = np.random.rand(pontok,3)*170
         for i in range(pontok):
             fok1=int(fokok[i,0])
@@ -90,7 +97,7 @@ def optimum_rand(device, lib,instrumentHandle, S_cel,paddle1,paddle2,paddle3,pon
             fok3=int(fokok[i,2])
             rossz=False
             for j in range(len(rosszfokok)):
-                if (abs(fok1-rosszfokok[j][0])<20 and abs(fok2-rosszfokok[j][1])<20 and abs(fok3-rosszfokok[j][2])<20 ):
+                if (abs(fok1-rosszfokok[j][0])<40 and abs(fok2-rosszfokok[j][1])<40 and abs(fok3-rosszfokok[j][2])<40 ):
                     i-=1
                     rossz=True
                     break
@@ -128,13 +135,16 @@ def optimum_rand(device, lib,instrumentHandle, S_cel,paddle1,paddle2,paddle3,pon
 
 
                 hiba = Sdif(S, S_cel)
-                print(f"{i+1}. vizsgálat: {fok1},{fok2},{fok3} fokoknál a hiba: {round(hiba,5)}")
+                print(f"{i2}. vizsgálat: {fok1},{fok2},{fok3} fokoknál a hiba: {round(hiba,5)}")
+                i2+=1 #Hanyadik vizsgálat
                 if (hiba < minimum_hiba or kapcs==-1):
                     kapcs=1
                     minimum_hiba=hiba
                     minimum_fokok=fokok[i]
                 if (hiba > 1 ):
                     rosszfokok.append([fok1,fok2,fok3])
+                if (minimum_hiba<0.2):
+                    break
 
     return [minimum_fokok,x,y,z]
 
@@ -183,10 +193,10 @@ def rajz(x,y,z):  #EZ ÚJ dolog
     # colormap = plt.cm.ScalarMappable(cmap='seismic')
     # colormap = plt.cm.ScalarMappable(cmap='hsv')
     colormap = plt.cm.ScalarMappable(cmap='cool')
-    ax.scatter(x, y, z, c=colormap.to_rgba(colors), s=5)
+    ax.scatter(y, z, x, c=colormap.to_rgba(colors), s=5)
 
     #pontok összekötése
-    ax.plot(x, y, z, color='grey', linewidth=1)
+    ax.plot(y, z, x, color='grey', linewidth=1)
 
     return
 def main():
@@ -313,7 +323,7 @@ def main():
 
 
         """------------------------------------------------VEZÉRLÉS-------------------------------------------"""
-        S_cel = Svec(np.pi/2,np.pi/2)
+        S_cel = Svec(np.pi,0)  #Cél beállítás
         random_pontok_szama=10
         print(S_cel)
 
@@ -357,14 +367,14 @@ def main():
         print(f"Optimum eddig: {round(opt1,2)},{round(opt2,2)},{round(opt3,2)} ")
         lepeskoz = 10
 
-        # min1 = uj_min(opt1, lepeskoz)
-        # min2 = uj_min(opt2, lepeskoz)
-        # min3 = uj_min(opt3, lepeskoz)
-        # max1 = uj_max(opt1, lepeskoz)
-        # max2 = uj_max(opt2, lepeskoz)
-        # max3 = uj_max(opt3, lepeskoz)
-        #
-        # lepeskoz/=5
+        min1 = uj_min(opt1, lepeskoz)
+        min2 = uj_min(opt2, lepeskoz)
+        min3 = uj_min(opt3, lepeskoz)
+        max1 = uj_max(opt1, lepeskoz)
+        max2 = uj_max(opt2, lepeskoz)
+        max3 = uj_max(opt3, lepeskoz)
+
+        lepeskoz/=5
 
         revolutionCounter = c_int()
         scanID = c_int()
@@ -443,6 +453,9 @@ def main():
 
         """---------------------------------------------------------------------------------------------------"""
 
+        idoveg = datetime.datetime.now()
+        delta = idoveg - idokezdet
+        print(delta)
 
 
 
