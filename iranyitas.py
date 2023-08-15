@@ -102,7 +102,7 @@ def optimum_rand(device, lib,instrumentHandle, S_cel,paddle1,paddle2,paddle3,pon
             fok3=int(fokok[i,2])
             rossz=False
             for j in range(len(rosszfokok)):
-                maxhiba=35*1.41*(rosszfok_hibak[j]**(1/2))
+                maxhiba=20*1.41*(rosszfok_hibak[j]**(1/2))
                 if (abs(fok1-rosszfokok[j][0])<maxhiba and abs(fok2-rosszfokok[j][1])<maxhiba and abs(fok3-rosszfokok[j][2])<maxhiba ):
                     i-=1
                     rossz=True
@@ -183,9 +183,8 @@ def min_max_beallit(t,a):
     return [minimum,maximum]
 
 'MÉG NEM JÓ'
-def kornyezet(device, lib,instrumentHandle, S_cel,paddle1,paddle2,paddle3,optimum,rogzitett):
-    beallitott_fokok = []
-    hibak_fokokhoz = []
+def kornyezet(device, lib,instrumentHandle, S_cel,paddle1,paddle2,paddle3,optimum,rogzitett,beallitott_fokok,hibak_fokokhoz):
+
     lista1=min_max_beallit(optimum,30)
     minimum=lista1[0]
     maximum=lista1[1]
@@ -198,61 +197,52 @@ def kornyezet(device, lib,instrumentHandle, S_cel,paddle1,paddle2,paddle3,optimu
     device.MoveTo(d3, paddle3, 60000)
 
 
-    kapcs=[1,1,1]
-    fokok=[optimum[0],optimum[1],optimum[2]]
+    hanyszor=[4,4,4]
+    hanyszor[rogzitett-1]=1
 
-    for i in np.linspace(minimum[0], maximum[0], 2):
+    kapcs=[1,1,1]
+    fok1=optimum[0]
+    fok2=optimum[1]
+    fok3=optimum[2]
+
+    for i in np.linspace(minimum[0], maximum[0], hanyszor[0]):
         if (rogzitett!=1):
-            fokok[0]=i
+            fok1=i
             d1=Decimal(i)
             device.MoveTo(d1, paddle1, 60000)
             time.sleep(0.1)
-        for j in np.linspace(minimum[1], maximum[1], 2):
+        for j in np.linspace(minimum[1], maximum[1], hanyszor[1]):
             if (rogzitett != 2):
-                fokok[1]=j
+                fok2=j
                 d2=Decimal(j)
                 device.MoveTo(d2, paddle2, 60000)
                 time.sleep(0.1)
 
-            for k in np.linspace(minimum[2], maximum[2], 2):
+            for k in np.linspace(minimum[2], maximum[2], hanyszor[2]):
                 if (rogzitett != 3):
-                    fokok[2]=k
+                    fok3=k
                     d3=Decimal(k)
                     device.MoveTo(d3, paddle3, 60000)
                     time.sleep(0.1)
+                revolutionCounter = c_int()
+                scanID = c_int()
+                lib.TLPAX_getLatestScan(instrumentHandle, byref(scanID))
+                # S0 = c_double()  ### fontos sor
+                S1 = c_double()  ### fontos sor
+                S2 = c_double()  ### fontos sor
+                S3 = c_double()  ### fontos sor
+
+                lib.TLPAX_getStokesNormalized(instrumentHandle, scanID.value, byref(S1), byref(S2),
+                                              byref(S3))  ### fontos sor
+                lib.TLPAX_releaseScan(instrumentHandle, scanID)
+                S = np.array([S1.value, S2.value, S3.value])
+                hiba = Sdif(S, S_cel)
+                beallitott_fokok.append([fok1, fok2, fok3])
+                hibak_fokokhoz.append(hiba)
+                print(f'{i},{j},{k},   {d1},{d2},{d3}   {beallitott_fokok},{hibak_fokokhoz}')
 
 
-            revolutionCounter = c_int()
-            scanID = c_int()
-            time.sleep(0.5)
-            lib.TLPAX_getLatestScan(instrumentHandle, byref(scanID))
-            # S0 = c_double()  ### fontos sor
-            S1 = c_double()  ### fontos sor
-            S2 = c_double()  ### fontos sor
-            S3 = c_double()  ### fontos sor
-
-            lib.TLPAX_getStokesNormalized(instrumentHandle, scanID.value, byref(S1), byref(S2),
-                                          byref(S3))  ### fontos sor
-            lib.TLPAX_releaseScan(instrumentHandle, scanID)
-            S = np.array([S1.value, S2.value, S3.value])
-            hiba = Sdif(S, S_cel)
-            beallitott_fokok.append(fokok)
-            hibak_fokokhoz.append(hiba)
-
-    fig = plt.figure()
-    ax = fig.add_subplot(111, projection='3d')
-    ax.set_xlim(0, 170)
-    ax.set_ylim(0, 170)
-    ax.set_zlim(0, 170)
-    ax.set_xlabel('Elso')
-    ax.set_ylabel('Masodik')
-    ax.set_zlabel('Harmadik')
-    szinek = np.array(hibak_fokokhoz)
-    szinek = szinek * 128
-    data = np.array(beallitott_fokok)
-    ax.scatter(data[:, 0], data[:, 1], data[:, 2], c=szinek)
-
-    return
+    return [beallitott_fokok,hibak_fokokhoz]
 
 
 
@@ -461,6 +451,7 @@ def main():
         print("Random pontokra beállítás")
         "Random helyekre beállítások"
         lista = optimum_rand(device,lib,instrumentHandle,S_cel,paddle1,paddle2,paddle3,random_pontok_szama)
+        #lista=[[100,50,75],1,2,3,[[100,50,75]],[0.27024]]  ##########Töröld majd csak teszteléshez kell########
         opt1=int(lista[0][0])
         opt2=int(lista[0][1])
         opt3=int(lista[0][2])
@@ -494,7 +485,7 @@ def main():
         S1 = c_double()  ### fontos sor
         S2 = c_double()  ### fontos sor
         S3 = c_double()  ### fontos sor
-        for i in range(3):
+        for i in range(0):
 
             paddle = PolarizerPaddles.Paddle2
             lista = optimum(device, lib,instrumentHandle, S_cel,paddle,min2,max2,lepeskoz)
@@ -572,17 +563,71 @@ def main():
         ax.set_ylabel('Masodik')
         ax.set_zlabel('Harmadik')
         szinek=np.array(hibak_fokokhoz)
-        szinek=szinek*128
+        szinek=1-(szinek/2)
         data=np.array(beallitott_fokok)
-        ax.scatter(data[:,0], data[:,1], data[:,2], c=szinek)
+
+        colormap = plt.cm.ScalarMappable(cmap='RdYlGn')
+        ax.scatter(data[:,0], data[:,1], data[:,2], c=colormap.to_rgba(szinek))
 
         'három sík az optimum körül'
         optimum_hely=[opt1,opt2,opt3]
 
-        kornyezet(device,lib,instrumentHandle,S_cel,paddle1,paddle2,paddle3,optimum_hely,1)
-        kornyezet(device,lib,instrumentHandle,S_cel,paddle1,paddle2,paddle3,optimum_hely,2)
-        kornyezet(device,lib,instrumentHandle,S_cel,paddle1,paddle2,paddle3,optimum_hely,3)
+        beallitott_fokok1=[]
+        hibak_fokokhoz1=[]
 
+        [beallitott_fokok1,hibak_fokokhoz1]=kornyezet(device,lib,instrumentHandle,S_cel,paddle1,paddle2,paddle3,optimum_hely,1,beallitott_fokok1,hibak_fokokhoz1)
+        fig = plt.figure()
+        ax = fig.add_subplot(111, projection='3d')
+        ax.set_xlim(0, 170)
+        ax.set_ylim(0, 170)
+        ax.set_zlim(0, 170)
+        ax.set_xlabel('Elso')
+        ax.set_ylabel('Masodik')
+        ax.set_zlabel('Harmadik')
+        szinek = np.array(hibak_fokokhoz1)
+        szinek=1-(szinek/2)
+        data = np.array(beallitott_fokok1)
+        colormap = plt.cm.ScalarMappable(cmap='RdYlGn')
+        ax.scatter(data[:, 0], data[:, 1], data[:, 2], c=colormap.to_rgba(szinek))
+
+        beallitott_fokok1 = []
+        hibak_fokokhoz1 = []
+        [beallitott_fokok1, hibak_fokokhoz1] = kornyezet(device, lib, instrumentHandle, S_cel, paddle1, paddle2,
+                                                         paddle3, optimum_hely, 2, beallitott_fokok1, hibak_fokokhoz1)
+
+
+        fig = plt.figure()
+        ax = fig.add_subplot(111, projection='3d')
+        ax.set_xlim(0, 170)
+        ax.set_ylim(0, 170)
+        ax.set_zlim(0, 170)
+        ax.set_xlabel('Elso')
+        ax.set_ylabel('Masodik')
+        ax.set_zlabel('Harmadik')
+        szinek = np.array(hibak_fokokhoz1)
+        szinek=1-(szinek/2)
+        data = np.array(beallitott_fokok1)
+        colormap = plt.cm.ScalarMappable(cmap='RdYlGn')
+        ax.scatter(data[:, 0], data[:, 1], data[:, 2], c=colormap.to_rgba(szinek))
+
+        beallitott_fokok1 = []
+        hibak_fokokhoz1 = []
+        [beallitott_fokok1, hibak_fokokhoz1] = kornyezet(device, lib, instrumentHandle, S_cel, paddle1, paddle2,
+                                                         paddle3, optimum_hely, 3, beallitott_fokok1, hibak_fokokhoz1)
+
+        fig = plt.figure()
+        ax = fig.add_subplot(111, projection='3d')
+        ax.set_xlim(0, 170)
+        ax.set_ylim(0, 170)
+        ax.set_zlim(0, 170)
+        ax.set_xlabel('Elso')
+        ax.set_ylabel('Masodik')
+        ax.set_zlabel('Harmadik')
+        szinek = np.array(hibak_fokokhoz1)
+        szinek=1-(szinek/2)
+        data = np.array(beallitott_fokok1)
+        colormap = plt.cm.ScalarMappable(cmap='RdYlGn')
+        ax.scatter(data[:, 0], data[:, 1], data[:, 2], c=colormap.to_rgba(szinek))
 
         """---------------------------------------------------------------------------------------------------"""
 
