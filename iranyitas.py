@@ -80,16 +80,21 @@ def optimum(device, lib,instrumentHandle, S_cel,paddle,tart_eleje,tart_vege,lepe
     return [minimum_fok,x,y,z]
 
 def optimum_rand(device, lib,instrumentHandle, S_cel,paddle1,paddle2,paddle3,pontok):
+    beallitott_fokok=[] #új
+    hibak_fokokhoz=[] #új
     kapcs=-1
     minimum_fokok = -1
     minimum_hiba = 3
 
     rosszfokok=[]
+    rosszfok_hibak=[]
+    jofokok=[]
+    jofok_hibak=[]
     x = []
     y = []
     z = []
     i2=1
-    while minimum_hiba > 0.4:
+    while minimum_hiba > 0.3:
         fokok = np.random.rand(pontok,3)*170
         for i in range(pontok):
             fok1=int(fokok[i,0])
@@ -97,11 +102,21 @@ def optimum_rand(device, lib,instrumentHandle, S_cel,paddle1,paddle2,paddle3,pon
             fok3=int(fokok[i,2])
             rossz=False
             for j in range(len(rosszfokok)):
-                if (abs(fok1-rosszfokok[j][0])<40 and abs(fok2-rosszfokok[j][1])<40 and abs(fok3-rosszfokok[j][2])<40 ):
+                maxhiba=35*1.41*(rosszfok_hibak[j]**(1/2))
+                if (abs(fok1-rosszfokok[j][0])<maxhiba and abs(fok2-rosszfokok[j][1])<maxhiba and abs(fok3-rosszfokok[j][2])<maxhiba ):
                     i-=1
                     rossz=True
                     break
+            if (not rossz):
+                for j in range(len(jofokok)):
+                    maxhiba2 = 80*jofok_hibak[j]
+                    if (abs(fok1-jofokok[j][0])>maxhiba2 or abs(fok2-jofokok[j][1])>maxhiba2 or abs(fok3-jofokok[j][2])>maxhiba2 ):
+                        i-=1
+                        rossz=True
+                        break
+
             if(not rossz):
+                beallitott_fokok.append([fok1,fok2,fok3])
                 d1 = Decimal(fok1)
                 d2 = Decimal(fok2)
                 d3 = Decimal(fok3)
@@ -135,18 +150,113 @@ def optimum_rand(device, lib,instrumentHandle, S_cel,paddle1,paddle2,paddle3,pon
 
 
                 hiba = Sdif(S, S_cel)
+                hibak_fokokhoz.append(hiba)
                 print(f"{i2}. vizsgálat: {fok1},{fok2},{fok3} fokoknál a hiba: {round(hiba,5)}")
                 i2+=1 #Hanyadik vizsgálat
                 if (hiba < minimum_hiba or kapcs==-1):
                     kapcs=1
                     minimum_hiba=hiba
                     minimum_fokok=fokok[i]
-                if (hiba > 1 ):
+                if (hiba > 1.3 ):
                     rosszfokok.append([fok1,fok2,fok3])
+                    rosszfok_hibak.append(hiba)
+                if (hiba < 0.7):
+                    jofokok.append([fok1,fok2,fok3])
+                    jofok_hibak.append(hiba)
                 if (minimum_hiba<0.2):
                     break
 
-    return [minimum_fokok,x,y,z]
+    return [minimum_fokok,x,y,z,beallitott_fokok,hibak_fokokhoz]
+
+'kornyezet  megvizsgalasa'
+def min_max_beallit(t,a):
+    minimum=[0,0,0]
+    maximum=[170,170,170]
+    for i in range(3):
+        minimum[i] = t[i] - 30
+        if minimum[i] < 0:
+            minimum[i] = 0
+        maximum[i] = t[i] + 30
+        if maximum[i] > 170:
+            maximum[i] = 170
+
+    return [minimum,maximum]
+
+'MÉG NEM JÓ'
+def kornyezet(device, lib,instrumentHandle, S_cel,paddle1,paddle2,paddle3,optimum,rogzitett):
+    beallitott_fokok = []
+    hibak_fokokhoz = []
+    lista1=min_max_beallit(optimum,30)
+    minimum=lista1[0]
+    maximum=lista1[1]
+
+    d1=Decimal(optimum[0])
+    d2 = Decimal(optimum[1])
+    d3 = Decimal(optimum[2])
+    device.MoveTo(d1, paddle1, 60000)
+    device.MoveTo(d2, paddle2, 60000)
+    device.MoveTo(d3, paddle3, 60000)
+
+
+    kapcs=[1,1,1]
+    fokok=[optimum[0],optimum[1],optimum[2]]
+
+    for i in np.linspace(minimum[0], maximum[0], 2):
+        if (rogzitett!=1):
+            fokok[0]=i
+            d1=Decimal(i)
+            device.MoveTo(d1, paddle1, 60000)
+            time.sleep(0.1)
+        for j in np.linspace(minimum[1], maximum[1], 2):
+            if (rogzitett != 2):
+                fokok[1]=j
+                d2=Decimal(j)
+                device.MoveTo(d2, paddle2, 60000)
+                time.sleep(0.1)
+
+            for k in np.linspace(minimum[2], maximum[2], 2):
+                if (rogzitett != 3):
+                    fokok[2]=k
+                    d3=Decimal(k)
+                    device.MoveTo(d3, paddle3, 60000)
+                    time.sleep(0.1)
+
+
+            revolutionCounter = c_int()
+            scanID = c_int()
+            time.sleep(0.5)
+            lib.TLPAX_getLatestScan(instrumentHandle, byref(scanID))
+            # S0 = c_double()  ### fontos sor
+            S1 = c_double()  ### fontos sor
+            S2 = c_double()  ### fontos sor
+            S3 = c_double()  ### fontos sor
+
+            lib.TLPAX_getStokesNormalized(instrumentHandle, scanID.value, byref(S1), byref(S2),
+                                          byref(S3))  ### fontos sor
+            lib.TLPAX_releaseScan(instrumentHandle, scanID)
+            S = np.array([S1.value, S2.value, S3.value])
+            hiba = Sdif(S, S_cel)
+            beallitott_fokok.append(fokok)
+            hibak_fokokhoz.append(hiba)
+
+    fig = plt.figure()
+    ax = fig.add_subplot(111, projection='3d')
+    ax.set_xlim(0, 170)
+    ax.set_ylim(0, 170)
+    ax.set_zlim(0, 170)
+    ax.set_xlabel('Elso')
+    ax.set_ylabel('Masodik')
+    ax.set_zlabel('Harmadik')
+    szinek = np.array(hibak_fokokhoz)
+    szinek = szinek * 128
+    data = np.array(beallitott_fokok)
+    ax.scatter(data[:, 0], data[:, 1], data[:, 2], c=szinek)
+
+    return
+
+
+
+
 
 def uj_min(a,mennyivel):
     c=a-mennyivel
@@ -323,7 +433,7 @@ def main():
 
 
         """------------------------------------------------VEZÉRLÉS-------------------------------------------"""
-        S_cel = Svec(np.pi,0)  #Cél beállítás
+        S_cel = Svec(np.pi/2,np.pi/2)  #Cél beállítás
         random_pontok_szama=10
         print(S_cel)
 
@@ -351,11 +461,13 @@ def main():
         print("Random pontokra beállítás")
         "Random helyekre beállítások"
         lista = optimum_rand(device,lib,instrumentHandle,S_cel,paddle1,paddle2,paddle3,random_pontok_szama)
-
         opt1=int(lista[0][0])
         opt2=int(lista[0][1])
         opt3=int(lista[0][2])
         rajz(lista[1], lista[2], lista[3])
+        beallitott_fokok=lista[4]
+        hibak_fokokhoz=lista[5]
+
 
         d1 = Decimal(opt1)
         d2 = Decimal(opt2)
@@ -447,8 +559,29 @@ def main():
         hiba = Sdif(S, S_cel)
         print(f"Pozíció: {opt1}, {opt2}, {opt3}")
         print(f"Hiba: {hiba}")
+        print(f"Beállított fokok: {beallitott_fokok}")
+        print(f"Hibák a fokokhoz: {hibak_fokokhoz}")
 
+        #Kocka
+        fig = plt.figure()
+        ax = fig.add_subplot(111, projection='3d')
+        ax.set_xlim(0, 170)
+        ax.set_ylim(0, 170)
+        ax.set_zlim(0, 170)
+        ax.set_xlabel('Elso')
+        ax.set_ylabel('Masodik')
+        ax.set_zlabel('Harmadik')
+        szinek=np.array(hibak_fokokhoz)
+        szinek=szinek*128
+        data=np.array(beallitott_fokok)
+        ax.scatter(data[:,0], data[:,1], data[:,2], c=szinek)
 
+        'három sík az optimum körül'
+        optimum_hely=[opt1,opt2,opt3]
+
+        kornyezet(device,lib,instrumentHandle,S_cel,paddle1,paddle2,paddle3,optimum_hely,1)
+        kornyezet(device,lib,instrumentHandle,S_cel,paddle1,paddle2,paddle3,optimum_hely,2)
+        kornyezet(device,lib,instrumentHandle,S_cel,paddle1,paddle2,paddle3,optimum_hely,3)
 
 
         """---------------------------------------------------------------------------------------------------"""
