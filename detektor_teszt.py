@@ -96,8 +96,8 @@ def optimum_kereso(device,tc,paddle,min,max,db):
             maxérték = adat
             opt = i
 
-    d = Decimal(opt)
-    device.MoveTo(d, paddle, 60000)
+    #d = Decimal(opt)
+    #device.MoveTo(d, paddle, 60000)
 
     return [probalk,adatok,opt]
 def uj_min(a,mennyivel): #kell majd#
