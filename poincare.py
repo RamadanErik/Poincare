@@ -9,8 +9,8 @@ import random
 
 #eta = np.pi / 2  # EZT KELL VÁLTOZTATNI
 
-hiba1 = 0.8  # EZT KELL VÁLTOZTATNI  pi/2 --> lambda/4
-hiba2 = -np.pi+0.3 # EZT KELL VÁLTOZTATNI
+hiba1 = 0  # EZT KELL VÁLTOZTATNI  pi/2 --> lambda/4
+hiba2 = -np.pi # EZT KELL VÁLTOZTATNI
 hiba3 = -np.pi/2  # EZT KELL VÁLTOZTATNI
 
 felbontas = 9000
@@ -22,11 +22,11 @@ alfa = np.pi / 3.26
 
 # feny = np.array([[1], [0]])  # LHP
 # feny = np.array([[0],[1]]) #LVP
-# feny = 1/np.sqrt(2)*np.array([[1],[1]]) #+45
+feny = 1/np.sqrt(2)*np.array([[1],[1]]) #+45
 # feny = 1/np.sqrt(2)*np.array([[1],[-1]]) #-45
 # feny = 1/np.sqrt(2)*np.array([[1],[-1j]]) #RCP
 # feny = 1/np.sqrt(2)*np.array([[1],[1j]]) #LCP
-feny = np.array([[np.cos(alfa)], [np.sin(alfa)]])
+# feny = np.array([[np.cos(alfa)], [np.sin(alfa)]])
 
 
 

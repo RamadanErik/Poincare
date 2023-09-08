@@ -24,14 +24,14 @@ from Thorlabs.MotionControl.GenericMotorCLI import *
 from Thorlabs.MotionControl.PolarizerCLI import *
 from System import Decimal
 
-def Svec(theta,phi):
+def Svec(theta,phi):  "XXX"
     v = np.array([np.sin(theta)*np.cos(phi), np.sin(theta)*np.sin(phi), np.cos(theta)])
     return v
 
-def Sdif(S1, S2):
+def Sdif(S1, S2): "XXX"
     return np.linalg.norm(S1-S2)
 
-def optimum(device, lib,instrumentHandle, S_cel,paddle,tart_eleje,tart_vege,lepeskoz):
+def optimum(device, lib,instrumentHandle, S_cel,paddle,tart_eleje,tart_vege,lepeskoz): "XXX"
     minimum_fok = -1
     minimum_hiba = -1
     lepesek = int((tart_vege-tart_eleje) / lepeskoz+1)
@@ -79,7 +79,7 @@ def optimum(device, lib,instrumentHandle, S_cel,paddle,tart_eleje,tart_vege,lepe
 
     return [minimum_fok,x,y,z]
 
-def optimum_rand(device, lib,instrumentHandle, S_cel,paddle1,paddle2,paddle3,pontok):
+def optimum_rand(device, lib,instrumentHandle, S_cel,paddle1,paddle2,paddle3,pontok): "XXX"
     beallitott_fokok=[] #új
     hibak_fokokhoz=[] #új
     kapcs=-1
@@ -102,14 +102,14 @@ def optimum_rand(device, lib,instrumentHandle, S_cel,paddle1,paddle2,paddle3,pon
             fok3=int(fokok[i,2])
             rossz=False
             for j in range(len(rosszfokok)):
-                maxhiba=20*1.41*(rosszfok_hibak[j]**(1/2))
+                maxhiba=35*rosszfok_hibak[j]
                 if (abs(fok1-rosszfokok[j][0])<maxhiba and abs(fok2-rosszfokok[j][1])<maxhiba and abs(fok3-rosszfokok[j][2])<maxhiba ):
                     i-=1
                     rossz=True
                     break
             if (not rossz):
                 for j in range(len(jofokok)):
-                    maxhiba2 = 80*jofok_hibak[j]
+                    maxhiba2 = 90*jofok_hibak[j]
                     if (abs(fok1-jofokok[j][0])>maxhiba2 or abs(fok2-jofokok[j][1])>maxhiba2 or abs(fok3-jofokok[j][2])>maxhiba2 ):
                         i-=1
                         rossz=True
@@ -157,10 +157,10 @@ def optimum_rand(device, lib,instrumentHandle, S_cel,paddle1,paddle2,paddle3,pon
                     kapcs=1
                     minimum_hiba=hiba
                     minimum_fokok=fokok[i]
-                if (hiba > 1.3 ):
+                if (hiba > 1.1 ):
                     rosszfokok.append([fok1,fok2,fok3])
                     rosszfok_hibak.append(hiba)
-                if (hiba < 0.7):
+                if (hiba < 0.8):
                     jofokok.append([fok1,fok2,fok3])
                     jofok_hibak.append(hiba)
                 if (minimum_hiba<0.2):
@@ -169,7 +169,7 @@ def optimum_rand(device, lib,instrumentHandle, S_cel,paddle1,paddle2,paddle3,pon
     return [minimum_fokok,x,y,z,beallitott_fokok,hibak_fokokhoz]
 
 'kornyezet  megvizsgalasa'
-def min_max_beallit(t,a):
+def min_max_beallit(t,a):  "?"
     minimum=[0,0,0]
     maximum=[170,170,170]
     for i in range(3):
@@ -248,13 +248,13 @@ def kornyezet(device, lib,instrumentHandle, S_cel,paddle1,paddle2,paddle3,optimu
 
 
 
-def uj_min(a,mennyivel):
+def uj_min(a,mennyivel): #kell majd#
     c=a-mennyivel
     if(c<0):
         c=0
     return c
 
-def uj_max(a,mennyivel):
+def uj_max(a,mennyivel): #kell majd#
     c=a+mennyivel
     if(c>170):
         c=170
@@ -299,7 +299,7 @@ def rajz(x,y,z):  #EZ ÚJ dolog
     ax.plot(y, z, x, color='grey', linewidth=1)
 
     return
-def main():
+def main2():
     """--------------------------------Polariméter-----------------------------"""
     # Load DLL library
     lib = cdll.LoadLibrary(r"C:\Program Files\IVI Foundation\VISA\Win64\Bin\TLPAX_64.dll")
@@ -358,7 +358,7 @@ def main():
     """The main entry point for the application"""
 
     # Uncomment this line if you are using
-    SimulationManager.Instance.InitializeSimulations()
+    #SimulationManager.Instance.InitializeSimulations()
 
     try:
         #print(GenericMotorCLI.ControlParameters.JogParametersBase.JogModes.SingleStep)
@@ -423,7 +423,7 @@ def main():
 
 
         """------------------------------------------------VEZÉRLÉS-------------------------------------------"""
-        S_cel = Svec(np.pi/2,np.pi/2)  #Cél beállítás
+        S_cel = Svec(np.pi/2,0)  #Cél beállítás
         random_pontok_szama=10
         print(S_cel)
 
@@ -485,7 +485,7 @@ def main():
         S1 = c_double()  ### fontos sor
         S2 = c_double()  ### fontos sor
         S3 = c_double()  ### fontos sor
-        for i in range(0):
+        for i in range(3):
 
             paddle = PolarizerPaddles.Paddle2
             lista = optimum(device, lib,instrumentHandle, S_cel,paddle,min2,max2,lepeskoz)
@@ -554,80 +554,80 @@ def main():
         print(f"Hibák a fokokhoz: {hibak_fokokhoz}")
 
         #Kocka
-        fig = plt.figure()
-        ax = fig.add_subplot(111, projection='3d')
-        ax.set_xlim(0, 170)
-        ax.set_ylim(0, 170)
-        ax.set_zlim(0, 170)
-        ax.set_xlabel('Elso')
-        ax.set_ylabel('Masodik')
-        ax.set_zlabel('Harmadik')
-        szinek=np.array(hibak_fokokhoz)
-        szinek=1-(szinek/2)
-        data=np.array(beallitott_fokok)
-
-        colormap = plt.cm.ScalarMappable(cmap='RdYlGn')
-        ax.scatter(data[:,0], data[:,1], data[:,2], c=colormap.to_rgba(szinek))
-
-        'három sík az optimum körül'
-        optimum_hely=[opt1,opt2,opt3]
-
-        beallitott_fokok1=[]
-        hibak_fokokhoz1=[]
-
-        [beallitott_fokok1,hibak_fokokhoz1]=kornyezet(device,lib,instrumentHandle,S_cel,paddle1,paddle2,paddle3,optimum_hely,1,beallitott_fokok1,hibak_fokokhoz1)
-        fig = plt.figure()
-        ax = fig.add_subplot(111, projection='3d')
-        ax.set_xlim(0, 170)
-        ax.set_ylim(0, 170)
-        ax.set_zlim(0, 170)
-        ax.set_xlabel('Elso')
-        ax.set_ylabel('Masodik')
-        ax.set_zlabel('Harmadik')
-        szinek = np.array(hibak_fokokhoz1)
-        szinek=1-(szinek/2)
-        data = np.array(beallitott_fokok1)
-        colormap = plt.cm.ScalarMappable(cmap='RdYlGn')
-        ax.scatter(data[:, 0], data[:, 1], data[:, 2], c=colormap.to_rgba(szinek))
-
-        beallitott_fokok1 = []
-        hibak_fokokhoz1 = []
-        [beallitott_fokok1, hibak_fokokhoz1] = kornyezet(device, lib, instrumentHandle, S_cel, paddle1, paddle2,
-                                                         paddle3, optimum_hely, 2, beallitott_fokok1, hibak_fokokhoz1)
-
-
-        fig = plt.figure()
-        ax = fig.add_subplot(111, projection='3d')
-        ax.set_xlim(0, 170)
-        ax.set_ylim(0, 170)
-        ax.set_zlim(0, 170)
-        ax.set_xlabel('Elso')
-        ax.set_ylabel('Masodik')
-        ax.set_zlabel('Harmadik')
-        szinek = np.array(hibak_fokokhoz1)
-        szinek=1-(szinek/2)
-        data = np.array(beallitott_fokok1)
-        colormap = plt.cm.ScalarMappable(cmap='RdYlGn')
-        ax.scatter(data[:, 0], data[:, 1], data[:, 2], c=colormap.to_rgba(szinek))
-
-        beallitott_fokok1 = []
-        hibak_fokokhoz1 = []
-        [beallitott_fokok1, hibak_fokokhoz1] = kornyezet(device, lib, instrumentHandle, S_cel, paddle1, paddle2,
-                                                         paddle3, optimum_hely, 3, beallitott_fokok1, hibak_fokokhoz1)
-
-        fig = plt.figure()
-        ax = fig.add_subplot(111, projection='3d')
-        ax.set_xlim(0, 170)
-        ax.set_ylim(0, 170)
-        ax.set_zlim(0, 170)
-        ax.set_xlabel('Elso')
-        ax.set_ylabel('Masodik')
-        ax.set_zlabel('Harmadik')
-        szinek = np.array(hibak_fokokhoz1)
-        szinek=1-(szinek/2)
-        data = np.array(beallitott_fokok1)
-        colormap = plt.cm.ScalarMappable(cmap='RdYlGn')
-        ax.scatter(data[:, 0], data[:, 1], data[:, 2], c=colormap.to_rgba(szinek))
+        # fig = plt.figure()
+        # ax = fig.add_subplot(111, projection='3d')
+        # ax.set_xlim(0, 170)
+        # ax.set_ylim(0, 170)
+        # ax.set_zlim(0, 170)
+        # ax.set_xlabel('Elso')
+        # ax.set_ylabel('Masodik')
+        # ax.set_zlabel('Harmadik')
+        # szinek=np.array(hibak_fokokhoz)
+        # szinek=1-(szinek/2)
+        # data=np.array(beallitott_fokok)
+        #
+        # colormap = plt.cm.ScalarMappable(cmap='RdYlGn')
+        # ax.scatter(data[:,0], data[:,1], data[:,2], c=colormap.to_rgba(szinek))
+        #
+        # 'három sík az optimum körül'
+        # optimum_hely=[opt1,opt2,opt3]
+        #
+        # beallitott_fokok1=[]
+        # hibak_fokokhoz1=[]
+        #
+        # [beallitott_fokok1,hibak_fokokhoz1]=kornyezet(device,lib,instrumentHandle,S_cel,paddle1,paddle2,paddle3,optimum_hely,1,beallitott_fokok1,hibak_fokokhoz1)
+        # fig = plt.figure()
+        # ax = fig.add_subplot(111, projection='3d')
+        # ax.set_xlim(0, 170)
+        # ax.set_ylim(0, 170)
+        # ax.set_zlim(0, 170)
+        # ax.set_xlabel('Elso')
+        # ax.set_ylabel('Masodik')
+        # ax.set_zlabel('Harmadik')
+        # szinek = np.array(hibak_fokokhoz1)
+        # szinek=1-(szinek/2)
+        # data = np.array(beallitott_fokok1)
+        # colormap = plt.cm.ScalarMappable(cmap='RdYlGn')
+        # ax.scatter(data[:, 0], data[:, 1], data[:, 2], c=colormap.to_rgba(szinek))
+        #
+        # beallitott_fokok1 = []
+        # hibak_fokokhoz1 = []
+        # [beallitott_fokok1, hibak_fokokhoz1] = kornyezet(device, lib, instrumentHandle, S_cel, paddle1, paddle2,
+        #                                                  paddle3, optimum_hely, 2, beallitott_fokok1, hibak_fokokhoz1)
+        #
+        #
+        # fig = plt.figure()
+        # ax = fig.add_subplot(111, projection='3d')
+        # ax.set_xlim(0, 170)
+        # ax.set_ylim(0, 170)
+        # ax.set_zlim(0, 170)
+        # ax.set_xlabel('Elso')
+        # ax.set_ylabel('Masodik')
+        # ax.set_zlabel('Harmadik')
+        # szinek = np.array(hibak_fokokhoz1)
+        # szinek=1-(szinek/2)
+        # data = np.array(beallitott_fokok1)
+        # colormap = plt.cm.ScalarMappable(cmap='RdYlGn')
+        # ax.scatter(data[:, 0], data[:, 1], data[:, 2], c=colormap.to_rgba(szinek))
+        #
+        # beallitott_fokok1 = []
+        # hibak_fokokhoz1 = []
+        # [beallitott_fokok1, hibak_fokokhoz1] = kornyezet(device, lib, instrumentHandle, S_cel, paddle1, paddle2,
+        #                                                  paddle3, optimum_hely, 3, beallitott_fokok1, hibak_fokokhoz1)
+        #
+        # fig = plt.figure()
+        # ax = fig.add_subplot(111, projection='3d')
+        # ax.set_xlim(0, 170)
+        # ax.set_ylim(0, 170)
+        # ax.set_zlim(0, 170)
+        # ax.set_xlabel('Elso')
+        # ax.set_ylabel('Masodik')
+        # ax.set_zlabel('Harmadik')
+        # szinek = np.array(hibak_fokokhoz1)
+        # szinek=1-(szinek/2)
+        # data = np.array(beallitott_fokok1)
+        # colormap = plt.cm.ScalarMappable(cmap='RdYlGn')
+        # ax.scatter(data[:, 0], data[:, 1], data[:, 2], c=colormap.to_rgba(szinek))
 
         """---------------------------------------------------------------------------------------------------"""
 
@@ -653,6 +653,6 @@ def main():
     return None
 
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()
 
