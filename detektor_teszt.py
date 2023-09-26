@@ -80,17 +80,21 @@ DEFAULT_LOG_PATH = None
 """------------------FÜGGVÉNYEK-----------------------"""
 def optimum_kereso(device,tc,paddle,min,max,db):
     adatok=[]
+
     probalk=[]
     maxérték = 0
     opt=0
     for i in np.linspace(min, max, db):
         d = Decimal(i)
         device.MoveTo(d, paddle, 60000)
-        adat2 = zmq_exec(tc, f"INPUt{1}:COUNter?")
-        adat = int(adat2)
-        adatok.append(adat)
+        lista=[]
+        for j in range(1,5):
+            adat2 = zmq_exec(tc, f"INPUt{j}:COUNter?")
+            adat = int(adat2)
+            lista.append(adat)
+        adatok.append(lista)
         probalk.append(i)
-        print(f"Fok:{i} Mérés:{adat}")
+        print(f"Fok:{i} Mérés:{lista[0]}")
         time.sleep(0.4)
         if adat > maxérték:
             maxérték = adat
@@ -251,7 +255,7 @@ def main():
         # fokok=[]
         # for i in np.linspace(0, 170,10):
         #     #for i in range(1,5):
-        #     #adat=zmq_exec(tc, f"HIST{i}:DATA?") ###fontos####
+        #     #adat=zmq_exec(tc, f"HIST{i}:DATA?")
         #
         #     d = Decimal(i)
         #     device.MoveTo(d, paddle, 60000)
@@ -333,12 +337,25 @@ def main():
 
 
         for j in range(2):
+            fokok = []
+            adatok2 = []
             probalk,adatok,optimum[0]=optimum_kereso(device,tc,paddle1,min[0],max[0],10)
-            plt.plot(probalk, adatok)
+            fokok.append(probalk)
+            adatok2.append(adatok)
             probalk, adatok, optimum[1] = optimum_kereso(device, tc, paddle2, min[1], max[1], 10)
-            plt.plot(probalk, adatok)
+            fokok.append(probalk)
+            adatok2.append(adatok)
             probalk, adatok, optimum[2] = optimum_kereso(device, tc, paddle3, min[2], max[2], 10)
-            plt.plot(probalk, adatok)
+            fokok.append(probalk)
+            adatok2.append(adatok)
+            adatok3 = np.array(adatok2)
+            for c in range(4):
+                fig = plt.figure(c+1)
+                for v in range(3):
+                    #adatok4=np.concatenate((adatok3[:,:,c][0],adatok3[:,:,c][1],adatok3[:,:,c][2]))
+                    plt.plot(fokok[v], adatok3[:,:,c][v])
+                fig.suptitle(f'{c + 1}. detektor')
+                plt.draw()
 
             for i in range(3):
                 min[i]=uj_min(optimum[i],20)
@@ -346,7 +363,7 @@ def main():
 
 
 
-        plt.show()
+        #plt.show()
 
 
 
@@ -354,10 +371,13 @@ def main():
         minimum=[0,0,0]
         maximum=[170,170,170]
 
+        adatok=np.array(adatok)
 
-        plt.plot(probalk, adatok)
 
         plt.show()
+
+
+
     except AssertionError as e:
         logger.error(e)
         sys.exit(1)
