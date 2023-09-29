@@ -5,6 +5,7 @@ import time
 #import iranyitas
 from pathlib import Path
 
+import csv
 import os
 import time
 import ctypes
@@ -78,10 +79,29 @@ DEFAULT_LOG_PATH = None
 
 
 """------------------FÜGGVÉNYEK-----------------------"""
+
+
+def save_counts_to_csv(counts, filepath):
+    with open(filepath, 'a', newline="") as csvfile:
+        writer_object = csv.writer(csvfile, delimiter=";")
+        for i in range(4):
+            for j in range(len(counts[0])):
+                lista=[]
+                for k in range(9):
+                    lista.append(counts[i][j][k])
+                writer_object.writerow(lista)
+                print(lista)
+
+
+        csvfile.close()
+    return
+
+
 def optimum_kereso(device,tc,paddle,min,max,db):
     adatok=[]
 
     probalk=[]
+    adat_elso=0
     maxérték = 0
     opt=0
     for i in np.linspace(min, max, db):
@@ -91,17 +111,20 @@ def optimum_kereso(device,tc,paddle,min,max,db):
         for j in range(1,5):
             adat2 = zmq_exec(tc, f"INPUt{j}:COUNter?")
             adat = int(adat2)
+            if(j==1):
+                adat_elso=adat
             lista.append(adat)
         adatok.append(lista)
         probalk.append(i)
-        print(f"Fok:{i} Mérés:{lista[0]}")
-        time.sleep(0.4)
-        if adat > maxérték:
-            maxérték = adat
+        print(f"Fok:{round(i,2)} Mérés:{lista[0]}")
+        time.sleep(0.2)
+        if adat_elso > maxérték:
+            maxérték = adat_elso
             opt = i
 
-    #d = Decimal(opt)
-    #device.MoveTo(d, paddle, 60000)
+    d = Decimal(opt)
+    device.MoveTo(d, paddle, 60000)
+    print(f'OPTIMUM: {round(opt,2)}')
 
     return [probalk,adatok,opt]
 def uj_min(a,mennyivel): #kell majd#
@@ -350,9 +373,8 @@ def main():
             adatok2.append(adatok)
             adatok3 = np.array(adatok2)
             for c in range(4):
-                fig = plt.figure(c+1)
+                fig = plt.figure(j*4+c+1)
                 for v in range(3):
-                    #adatok4=np.concatenate((adatok3[:,:,c][0],adatok3[:,:,c][1],adatok3[:,:,c][2]))
                     plt.plot(fokok[v], adatok3[:,:,c][v])
                 fig.suptitle(f'{c + 1}. detektor')
                 plt.draw()
