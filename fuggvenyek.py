@@ -9,6 +9,7 @@ import clr
 import sys
 import logging
 from datetime import datetime
+from mpl_toolkits.mplot3d import Axes3D
 
 logger = logging.getLogger(__name__)
 
@@ -27,8 +28,42 @@ from utils.acquisitions import (
     setup_input_counts_over_time_acquisition
 )
 
+def save_rand_counts_to_csv(fokok2,adatok3,optimum,opt_ertek,idokezdet,probalkozasok_szama):
+    filepath="C:\\Users\\KNL2022\\PycharmProjects\\Poincare\\csvk\\meres_rand.csv"
+    with open(filepath, 'a', newline="") as csvfile:
+        writer_object = csv.writer(csvfile, delimiter=";")
 
-def save_counts_to_csv(fokok2,adatok3,optimum,opt_ertek):
+        for i in range(len(fokok2)):
+            lista = []
+            for k in range(len(fokok2[0])):
+                lista.append(fokok2[i][k])
+            for detektor in range(4):
+                lista.append(adatok3[i][detektor])
+            writer_object.writerow(lista)
+            print(lista)
+
+        csvfile.close()
+    filepath = "C:\\Users\\KNL2022\\PycharmProjects\\Poincare\\csvk\\optimum_rand.csv"
+    with open(filepath, 'a', newline="") as csvfile:
+        writer_object = csv.writer(csvfile, delimiter=";")
+        lista=[probalkozasok_szama]
+        ts = time.time()
+        ido = datetime.fromtimestamp(ts)
+
+        for i in range(len(optimum)):
+            lista.append(int(optimum[i]))
+        for i in range(len(opt_ertek)):
+            lista.append(int(opt_ertek[i]))
+        lista.append([ido.year,ido.month,ido.day,ido.hour,ido.minute,ido.second,ido.microsecond])
+        idovege = datetime.now()
+        lista.append(idovege - idokezdet)
+        writer_object.writerow(lista)
+        csvfile.close()
+
+    return
+
+
+def save_counts_to_csv(fokok2,adatok3,optimum,opt_ertek,idokezdet):
     filepath="C:\\Users\\KNL2022\\PycharmProjects\\Poincare\\csvk\\meres.csv"
     with open(filepath, 'a', newline="") as csvfile:
         writer_object = csv.writer(csvfile, delimiter=";")
@@ -61,8 +96,9 @@ def save_counts_to_csv(fokok2,adatok3,optimum,opt_ertek):
         for i in range(len(opt_ertek)):
             lista.append(int(opt_ertek[i]))
         lista.append([ido.year,ido.month,ido.day,ido.hour,ido.minute,ido.second,ido.microsecond])
+        idovege = datetime.now()
+        lista.append(idovege - idokezdet)
         writer_object.writerow(lista)
-        print(lista)
         csvfile.close()
 
     return
@@ -180,6 +216,42 @@ def time_controller_csatlakozas():
         sys.exit(1)
     return tc
 
+
+def figure3d(fokok_rand,adatok,i2):
+    fokok_rand=np.array(fokok_rand)
+    adatok=np.array(adatok)
+    # Make data
+    x = np.array(fokok_rand[:, 0])
+    y = np.array(fokok_rand[:, 1])
+    z = np.array(fokok_rand[:, 2])
+
+    fig, ax = plt.subplots(subplot_kw={"projection": "3d"})
+
+    colors = adatok[:, 0]
+
+    colors = colors / max(colors)
+
+    colormap = plt.cm.ScalarMappable(cmap='seismic')
+    nagysag=150*10/i2
+    ax.scatter(x, y, z, c=colormap.to_rgba(colors), s=nagysag,marker='d')
+
+    ax.set_xlim(0, 170)
+    ax.set_ylim(0, 170)
+    ax.set_zlim(0, 170)
+
+    ax.set_xlabel('X')
+    ax.set_ylabel('Y')
+    ax.set_zlabel('Z')
+
+    ax.set_xticks([0, 85, 170])
+    ax.set_yticks([0, 85, 170])
+    ax.set_zticks([0, 85, 170])
+
+    ax.set_xticklabels(['0', '85', '170'])
+    ax.set_yticklabels(['0', '85', '170'])
+    ax.set_zticklabels(['0', '85', '170'])
+    return
+
 def kereso_algoritmus_sima(device,tc,iteraciok_szama,db):
     optimum = [0, 0, 0]
     paddle1 = PolarizerPaddles.Paddle1
@@ -209,6 +281,7 @@ def kereso_algoritmus_sima(device,tc,iteraciok_szama,db):
         adatok3 = np.array(adatok2)
         adatok_ki.append(adatok3)
         for c in range(4):
+            #figure3d(fokok[0],fokok[1],fokok[2],adatok[:,:,c])
             fig = plt.figure(j * 4 + c + 1)
             for v in range(3):
                 plt.plot(fokok[v], adatok3[:, :, c][v])
@@ -219,3 +292,57 @@ def kereso_algoritmus_sima(device,tc,iteraciok_szama,db):
             min[i] = uj_min(optimum[i], 20)
             max[i] = uj_max(optimum[i], 20)
     return fokok_ki,adatok_ki,optimum
+
+def kereso_algoritmus_random(device,tc,hatar,probalkozasi_limit,paddle1,paddle2,paddle3):
+    beallitott_fokok = []  # új
+    kapcs = -1
+    minimum_fokok = -1
+    #------------------
+    maximum_beutes=[0,0,0,0]
+    #------------------
+    pontok=10
+
+    adatok_ki=[]
+
+    x = []
+    y = []
+    z = []
+    i2 = 1
+
+    while maximum_beutes[0] < hatar and i2<probalkozasi_limit:
+        fokok = np.random.rand(pontok, 3) * 170
+        for i in range(pontok):
+            fok1 = int(fokok[i, 0])
+            fok2 = int(fokok[i, 1])
+            fok3 = int(fokok[i, 2])
+
+            beallitott_fokok.append([fok1, fok2, fok3])
+            d1 = Decimal(fok1)
+            d2 = Decimal(fok2)
+            d3 = Decimal(fok3)
+
+            device.MoveTo(d1, paddle1, 60000)
+            device.MoveTo(d2, paddle2, 60000)
+            device.MoveTo(d3, paddle3, 60000)
+
+            time.sleep(0.1)
+            adat_tomb=[]
+            for j in range(1, 5):
+                adat2 = zmq_exec(tc, f"INPUt{j}:COUNter?")
+                adat = int(adat2)
+                if (j == 1):
+                    adat_elso = adat
+                adat_tomb.append(adat)
+            adatok_ki.append(adat_tomb)
+
+            print(f"{i2}. vizsgálat: {fok1},{fok2},{fok3} fokoknál a beütések száma: {adat_elso}")
+            i2 += 1  # Hanyadik vizsgálat
+            if (adat_elso>maximum_beutes[0] or kapcs == -1):
+                kapcs = 1
+                maximum_beutes=adat_tomb
+                minimum_fokok = fokok[i]
+
+            if (maximum_beutes[0]>hatar):
+                break
+    figure3d(beallitott_fokok, adatok_ki,i2)
+    return beallitott_fokok,adatok_ki,minimum_fokok,maximum_beutes,i2

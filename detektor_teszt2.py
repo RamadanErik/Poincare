@@ -1,16 +1,8 @@
-import argparse
 import logging
-
-from pathlib import Path
-
-import csv
-
-import time
 import clr
-import numpy as np
 import matplotlib
-import matplotlib.pyplot as plt
 import datetime
+from pathlib import Path
 
 matplotlib.use('TkAgg')
 import sys
@@ -25,8 +17,6 @@ clr.AddReference("C:\\Program Files\\Thorlabs\\Kinesis\\ThorLabs.MotionControl.P
 from Thorlabs.MotionControl.DeviceManagerCLI import *
 from Thorlabs.MotionControl.GenericMotorCLI import *
 from Thorlabs.MotionControl.PolarizerCLI import *
-from System import Decimal
-
 '---------------------------------------------------'
 
 
@@ -79,6 +69,10 @@ def main():
         tc=time_controller_csatlakozas()
 
         fokok, adatok3, optimum=kereso_algoritmus_sima(device,tc,2,10)
+        #fokok_rand,adatok_rand,optimum_rand,max_rand,probalkozasok_szama=kereso_algoritmus_random(device,tc,900000,20,paddle1,paddle2,paddle3)
+
+
+
         opt_mert=[]
         for j in range(1, 5):
             adat2 = zmq_exec(tc, f"INPUt{j}:COUNter?")
@@ -87,8 +81,14 @@ def main():
 
 
 
-        save_counts_to_csv(fokok,adatok3,optimum,opt_mert)
-        #plt.show()
+        save_counts_to_csv(fokok,adatok3,optimum,opt_mert,idokezdet)
+        #save_rand_counts_to_csv(fokok_rand,adatok_rand,optimum_rand,max_rand,idokezdet,probalkozasok_szama)
+        plt.show()
+    idovege=datetime.datetime.now()
+    print()
+    print(idovege-idokezdet)
+    device.StopPolling()
+    device.Disconnect(True)
     sys.exit(0)
 
 
