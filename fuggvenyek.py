@@ -103,7 +103,38 @@ def save_counts_to_csv(fokok2,adatok3,optimum,opt_ertek,idokezdet):
 
     return
 
+def save_grad_counts_to_csv(fokok2,adatok3,optimum,opt_ertek,idokezdet):
+    filepath="C:\\Users\\KNL2022\\PycharmProjects\\Poincare\\csvk\\meres_grad.csv"
+    with open(filepath, 'a', newline="") as csvfile:
+        writer_object = csv.writer(csvfile, delimiter=";")
 
+        for i in range(len(fokok2)):
+            lista = []
+            for k in range(len(fokok2[0])):
+                lista.append(fokok2[i][k])
+            lista.append(adatok3[i])
+            writer_object.writerow(lista)
+            print(lista)
+
+        csvfile.close()
+    filepath = "C:\\Users\\KNL2022\\PycharmProjects\\Poincare\\csvk\\optimum_grad.csv"
+    with open(filepath, 'a', newline="") as csvfile:
+        writer_object = csv.writer(csvfile, delimiter=";")
+        lista=[]
+        ts = time.time()
+        ido = datetime.fromtimestamp(ts)
+
+        for i in range(len(optimum)):
+            lista.append(int(optimum[i]))
+        for i in range(len(opt_ertek)):
+            lista.append(int(opt_ertek[i]))
+        lista.append([ido.year,ido.month,ido.day,ido.hour,ido.minute,ido.second,ido.microsecond])
+        idovege = datetime.now()
+        lista.append(idovege - idokezdet)
+        writer_object.writerow(lista)
+        csvfile.close()
+
+    return
 def optimum_kereso(device,tc,paddle,min,max,db):
     adatok=[]
 
@@ -135,6 +166,78 @@ def optimum_kereso(device,tc,paddle,min,max,db):
     print(f'OPTIMUM: {round(opt,2)}')
 
     return [probalk,adatok,opt]
+
+
+def beallit3(device,paddles,poz):
+    d = Decimal(poz[0])
+    device.MoveTo(d, paddles[0], 60000)
+    d = Decimal(poz[1])
+    device.MoveTo(d, paddles[1], 60000)
+    d = Decimal(poz[2])
+    device.MoveTo(d, paddles[2], 60000)
+    return
+
+
+
+def parcialis_derivaltak(device,tc,paddles,poz):
+    parc=[0,0,0]
+    ertek = int(zmq_exec(tc, f"INPUt{1}:COUNter?"))
+    for i in range(3):
+        if poz[i] < 169:
+            d=Decimal(poz[i]+1)
+            n=1
+        else:
+            d=Decimal(poz[i]-1)
+            n=-1
+        device.MoveTo(d,paddles[i],60000)
+        ertek2 = int(zmq_exec(tc, f"INPUt{1}:COUNter?"))
+        parc[i] = (ertek2-ertek)*n
+        d = Decimal(poz[i])
+        device.MoveTo(d, paddles[i], 60000)
+
+    return parc
+
+
+def kompatibilis_fokok(fokok):
+    for i in range(3):
+        if fokok[i]<0:
+            fokok[i]=0
+        elif fokok[i]>170:
+            fokok[i]=170
+def kereso_algoritmus_gradiens(device,tc,paddle1,paddle2,paddle3,db,kezdopoz):
+    adatok = []
+    probalk = []
+
+    poz = kezdopoz
+    paddles = [paddle1, paddle2, paddle3]
+
+    'Kezdőpozíció beállítás'
+    beallit3(device,paddles,poz)
+
+    for hanyszor in range(db):
+
+        'Parciális derváltak'
+        parc=parcialis_derivaltak(device,tc,paddles,poz)
+        print(f"Parciális deriváltak:{parc[0]},{parc[1]},{parc[2]}")
+        ujpoz=[0,0,0]
+        learning_rate=0.01
+        for i in range(3):
+            ujpoz[i]=poz[i]-parc[i]*learning_rate
+
+        ujpoz=kompatibilis_fokok(ujpoz)
+        probalk.append(poz)
+
+        print(f"Új fokok: {round(poz[0],2)},{round(poz[0],2)},{round(poz[0],2)}")
+        ertek = int(zmq_exec(tc, f"INPUt{1}:COUNter?"))
+
+        adatok.append(ertek)
+        print(f"Mérés: {round(ertek,2)}")
+        beallit3(device,paddles,ujpoz)
+
+    opt=ujpoz
+
+    return [probalk,adatok,opt,ertek]
+
 def uj_min(a,mennyivel): #kell majd#
     c=a-mennyivel
     if(c<0):
