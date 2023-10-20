@@ -107,7 +107,7 @@ def save_grad_counts_to_csv(fokok2,adatok3,optimum,opt_ertek,idokezdet):
     filepath="C:\\Users\\KNL2022\\PycharmProjects\\Poincare\\csvk\\meres_grad.csv"
     with open(filepath, 'a', newline="") as csvfile:
         writer_object = csv.writer(csvfile, delimiter=";")
-
+        writer_object.writerow(["Start"])
         for i in range(len(fokok2)):
             lista = []
             for k in range(len(fokok2[0])):
@@ -126,8 +126,7 @@ def save_grad_counts_to_csv(fokok2,adatok3,optimum,opt_ertek,idokezdet):
 
         for i in range(len(optimum)):
             lista.append(int(optimum[i]))
-        for i in range(len(opt_ertek)):
-            lista.append(int(opt_ertek[i]))
+        lista.append(int(opt_ertek))
         lista.append([ido.year,ido.month,ido.day,ido.hour,ido.minute,ido.second,ido.microsecond])
         idovege = datetime.now()
         lista.append(idovege - idokezdet)
@@ -169,31 +168,38 @@ def optimum_kereso(device,tc,paddle,min,max,db):
 
 
 def beallit3(device,paddles,poz):
-    d = Decimal(poz[0])
+    d = Decimal(int(poz[0]))
     device.MoveTo(d, paddles[0], 60000)
-    d = Decimal(poz[1])
+    d = Decimal(int(poz[1]))
     device.MoveTo(d, paddles[1], 60000)
-    d = Decimal(poz[2])
+    d = Decimal(int(poz[2]))
     device.MoveTo(d, paddles[2], 60000)
+    time.sleep(0.5)
     return
 
 
 
 def parcialis_derivaltak(device,tc,paddles,poz):
     parc=[0,0,0]
-    ertek = int(zmq_exec(tc, f"INPUt{1}:COUNter?"))
+    eltolas=5
     for i in range(3):
-        if poz[i] < 169:
-            d=Decimal(poz[i]+1)
+        ertek = int(zmq_exec(tc, f"INPUt{1}:COUNter?"))
+        time.sleep(0.5)
+        if poz[i] < (170-eltolas):
+            d=Decimal(int(poz[i]+eltolas))
             n=1
         else:
-            d=Decimal(poz[i]-1)
+            d=Decimal(int(poz[i]-eltolas))
             n=-1
+        print(f"Mozgatás{d},{paddles[i]}")
         device.MoveTo(d,paddles[i],60000)
+
         ertek2 = int(zmq_exec(tc, f"INPUt{1}:COUNter?"))
-        parc[i] = (ertek2-ertek)*n
+        time.sleep(0.5)
+        parc[i] = int((ertek2-ertek)*n*(1/eltolas))
         d = Decimal(poz[i])
         device.MoveTo(d, paddles[i], 60000)
+
 
     return parc
 
@@ -204,6 +210,8 @@ def kompatibilis_fokok(fokok):
             fokok[i]=0
         elif fokok[i]>170:
             fokok[i]=170
+
+    return fokok
 def kereso_algoritmus_gradiens(device,tc,paddle1,paddle2,paddle3,db,kezdopoz):
     adatok = []
     probalk = []
@@ -214,26 +222,33 @@ def kereso_algoritmus_gradiens(device,tc,paddle1,paddle2,paddle3,db,kezdopoz):
     'Kezdőpozíció beállítás'
     beallit3(device,paddles,poz)
 
+    ujpoz=[0,0,0]
     for hanyszor in range(db):
 
         'Parciális derváltak'
         parc=parcialis_derivaltak(device,tc,paddles,poz)
         print(f"Parciális deriváltak:{parc[0]},{parc[1]},{parc[2]}")
-        ujpoz=[0,0,0]
-        learning_rate=0.01
+        learning_rate=0.006
         for i in range(3):
-            ujpoz[i]=poz[i]-parc[i]*learning_rate
+            valtozas=parc[i]*learning_rate
+            if valtozas>60:
+                valtozas=60
+            elif valtozas<-60:
+                valtozas=-60
+            ujpoz[i]=poz[i]-valtozas
 
         ujpoz=kompatibilis_fokok(ujpoz)
-        probalk.append(poz)
+        poz=ujpoz
 
-        print(f"Új fokok: {round(poz[0],2)},{round(poz[0],2)},{round(poz[0],2)}")
+
+        print(f"Új fokok: {round(poz[0],2)},{round(poz[1],2)},{round(poz[2],2)}")
         ertek = int(zmq_exec(tc, f"INPUt{1}:COUNter?"))
 
         adatok.append(ertek)
         print(f"Mérés: {round(ertek,2)}")
+        time.sleep(0.5)
         beallit3(device,paddles,ujpoz)
-
+        probalk.append([poz[0],poz[1],poz[2]])
     opt=ujpoz
 
     return [probalk,adatok,opt,ertek]
@@ -298,7 +313,8 @@ def time_controller_csatlakozas():
         DEFAULT_COUNTS_FILEPATH = "input_counts.csv"
 
         # Default counter integration time ps
-        DEFAULT_COUNTERS_INTEGRATION_TIME = 500000000000
+        mp = 0.5  # Másodpercben az integration time
+        DEFAULT_COUNTERS_INTEGRATION_TIME = int(mp * (10 ^ 12))
 
         # Default list of input counts to acquire
         DEFAULT_COUNTERS = ["1", "2", "3", "4"]

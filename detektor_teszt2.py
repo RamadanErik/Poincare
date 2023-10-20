@@ -50,7 +50,7 @@ DEFAULT_NUMBER_OF_ACQUISITIONS = 5
 # Default file path where counts are saved in CSV format (None = do not save)
 DEFAULT_COUNTS_FILEPATH = "input_counts.csv"
 # Default counter integration time ps
-mp=0.5 #Másododpercben az integration time
+mp=0.5 #Másodpercben az integration time
 DEFAULT_COUNTERS_INTEGRATION_TIME = int(mp*(10^12))
 # Default list of input counts to acquire
 DEFAULT_COUNTERS = ["1", "2", "3", "4"]
@@ -70,7 +70,7 @@ def main():
 
         #fokok, adatok3, optimum=kereso_algoritmus_sima(device,tc,2,10)
         #fokok_rand,adatok_rand,optimum_rand,max_rand,probalkozasok_szama=kereso_algoritmus_random(device,tc,900000,20,paddle1,paddle2,paddle3)
-        fokok_grad,adatok_grad,opt_grad,ertek=kereso_algoritmus_gradiens(device,tc,paddle1,paddle2,paddle3,10,[85,85,85])
+        fokok_grad,adatok_grad,opt_grad,ertek=kereso_algoritmus_gradiens(device,tc,paddle1,paddle2,paddle3,3,[85,85,85])
 
 
 
@@ -84,7 +84,7 @@ def main():
 
         #save_counts_to_csv(fokok,adatok3,optimum,opt_mert,idokezdet)
         #save_rand_counts_to_csv(fokok_rand,adatok_rand,optimum_rand,max_rand,idokezdet,probalkozasok_szama)
-        save_grad_counts_to_csv(fokok_grad,adatok_grad,opt_grad,ertek)
+        save_grad_counts_to_csv(fokok_grad,adatok_grad,opt_grad,ertek,idokezdet)
 
         plt.show()
     idovege=datetime.datetime.now()
