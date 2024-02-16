@@ -9,6 +9,7 @@ import clr
 import sys
 import logging
 from datetime import datetime
+import os
 from mpl_toolkits.mplot3d import Axes3D
 
 logger = logging.getLogger(__name__)
@@ -32,7 +33,7 @@ def save_rand_counts_to_csv(fokok2,adatok3,optimum,opt_ertek,idokezdet,probalkoz
     filepath="C:\\Users\\KNL2022\\PycharmProjects\\Poincare\\csvk\\meres_rand.csv"
     with open(filepath, 'a', newline="") as csvfile:
         writer_object = csv.writer(csvfile, delimiter=";")
-
+        writer_object.writerow(["Start"])
         for i in range(len(fokok2)):
             lista = []
             for k in range(len(fokok2[0])):
@@ -67,14 +68,14 @@ def save_counts_to_csv(fokok2,adatok3,optimum,opt_ertek,idokezdet):
     filepath="C:\\Users\\KNL2022\\PycharmProjects\\Poincare\\csvk\\meres.csv"
     with open(filepath, 'a', newline="") as csvfile:
         writer_object = csv.writer(csvfile, delimiter=";")
-
+        writer_object.writerow(["Start"])
         for i in range(len(fokok2)): #2
             seged_tomb = [0, 0, 0]
             for k in range(len(fokok2[0])):  # 3
                 for j in range(len(fokok2[0][0][0])): #10
                     lista=[]
                     for paddle in range(3):
-                        lista.append(int(fokok2[0][i][0][(seged_tomb[paddle])]))
+                        lista.append(int(fokok2[i][paddle][0][(seged_tomb[paddle])]))
                     seged_tomb[k]+=1
                     if seged_tomb[k]>=len(fokok2[0][0][0]):
                         seged_tomb[k]-=1
@@ -103,11 +104,11 @@ def save_counts_to_csv(fokok2,adatok3,optimum,opt_ertek,idokezdet):
 
     return
 
-def save_grad_counts_to_csv(fokok2,adatok3,optimum,opt_ertek,idokezdet):
+def save_grad_counts_to_csv(fokok2,adatok3,optimum,opt_ertek,idokezdet,learning_rate,eltolas):
     filepath="C:\\Users\\KNL2022\\PycharmProjects\\Poincare\\csvk\\meres_grad.csv"
     with open(filepath, 'a', newline="") as csvfile:
         writer_object = csv.writer(csvfile, delimiter=";")
-        writer_object.writerow(["Start"])
+        writer_object.writerow(["Start","Learningrate",learning_rate,"Eltolas",eltolas])
         for i in range(len(fokok2)):
             lista = []
             for k in range(len(fokok2[0])):
@@ -179,9 +180,8 @@ def beallit3(device,paddles,poz):
 
 
 
-def parcialis_derivaltak(device,tc,paddles,poz):
+def parcialis_derivaltak(device,tc,paddles,poz,eltolas):
     parc=[0,0,0]
-    eltolas=5
     for i in range(3):
         ertek = int(zmq_exec(tc, f"INPUt{1}:COUNter?"))
         time.sleep(0.5)
@@ -215,7 +215,8 @@ def kompatibilis_fokok(fokok):
 def kereso_algoritmus_gradiens(device,tc,paddle1,paddle2,paddle3,db,kezdopoz):
     adatok = []
     probalk = []
-
+    learning_rate=0.01
+    eltolas=5
     poz = kezdopoz
     paddles = [paddle1, paddle2, paddle3]
 
@@ -226,9 +227,8 @@ def kereso_algoritmus_gradiens(device,tc,paddle1,paddle2,paddle3,db,kezdopoz):
     for hanyszor in range(db):
 
         'Parciális derváltak'
-        parc=parcialis_derivaltak(device,tc,paddles,poz)
+        parc=parcialis_derivaltak(device,tc,paddles,poz,10)
         print(f"Parciális deriváltak:{parc[0]},{parc[1]},{parc[2]}")
-        learning_rate=0.006
         for i in range(3):
             valtozas=parc[i]*learning_rate
             if valtozas>60:
@@ -251,7 +251,7 @@ def kereso_algoritmus_gradiens(device,tc,paddle1,paddle2,paddle3,db,kezdopoz):
         probalk.append([poz[0],poz[1],poz[2]])
     opt=ujpoz
 
-    return [probalk,adatok,opt,ertek]
+    return [probalk,adatok,opt,ertek,learning_rate,eltolas]
 
 def uj_min(a,mennyivel): #kell majd#
     c=a-mennyivel
@@ -347,6 +347,7 @@ def figure3d(fokok_rand,adatok,i2):
     fig, ax = plt.subplots(subplot_kw={"projection": "3d"})
 
     colors = adatok[:, 0]
+    ertekek = adatok[:, 0]
 
     colors = colors / max(colors)
 
@@ -369,6 +370,22 @@ def figure3d(fokok_rand,adatok,i2):
     ax.set_xticklabels(['0', '85', '170'])
     ax.set_yticklabels(['0', '85', '170'])
     ax.set_zticklabels(['0', '85', '170'])
+
+    # Add color bar
+    cbar = fig.colorbar(colormap, ax=ax, orientation='vertical', shrink=0.8, aspect=10)
+    cbar.set_label('Színskála')
+    cbar.set_ticks([min(colors), max(colors)])
+    cbar.set_ticklabels([f'{min(ertekek):.0f}', f'{max(ertekek):.0f}'])
+
+    # Create a new directory with the current timestamp
+    current_time = datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
+    directory_path = f"C:/Users/KNL2022/PycharmProjects/Poincare/képek/figures_rand_{current_time}"
+    os.makedirs(directory_path)
+    # Save figure in the created directory
+    fig_name = f"{directory_path}/figurerand.png"
+    plt.savefig(fig_name)
+    plt.draw()
+    plt.close(fig)
     return
 
 def kereso_algoritmus_sima(device,tc,iteraciok_szama,db):
@@ -378,8 +395,20 @@ def kereso_algoritmus_sima(device,tc,iteraciok_szama,db):
     paddle3 = PolarizerPaddles.Paddle3
     min = [0, 0, 0]
     max = [170, 170, 170]
+
+    # 'töröld kell hozzá opt input'
+    for i in range(3):
+        min[i] = uj_min(opt[i], 20)
+        max[i] = uj_max(opt[i], 20)
+    '  '
     fokok_ki=[]
     adatok_ki=[]
+
+    # Create a new directory with the current timestamp
+    current_time = datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
+    directory_path = f"C:/Users/KNL2022/PycharmProjects/Poincare/képek/figures_{current_time}"
+    os.makedirs(directory_path)
+
     for j in range(iteraciok_szama):
         fokok_ki.append([[],[],[]])
     for j in range(iteraciok_szama):
@@ -401,15 +430,21 @@ def kereso_algoritmus_sima(device,tc,iteraciok_szama,db):
         adatok_ki.append(adatok3)
         for c in range(4):
             #figure3d(fokok[0],fokok[1],fokok[2],adatok[:,:,c])
-            fig = plt.figure(j * 4 + c + 1)
+            fig = plt.figure(j * 4 + c + 2)
             for v in range(3):
-                plt.plot(fokok[v], adatok3[:, :, c][v])
+                plt.plot(fokok[v], adatok3[:, :, c][v],label=f'{v + 1}. tárcsa')
+            plt.xlim(0, 170)
             fig.suptitle(f'{c + 1}. detektor')
+            plt.legend(loc='lower left')
+            # Save figure in the created directory
+            fig_name = f"{directory_path}/figure_{j}_{c + 1}.png"
+            plt.savefig(fig_name)
             plt.draw()
+            plt.close(fig)
 
         for i in range(3):
-            min[i] = uj_min(optimum[i], 20)
-            max[i] = uj_max(optimum[i], 20)
+            min[i] = uj_min(optimum[i], 20/(j+1))
+            max[i] = uj_max(optimum[i], 20/(j+1))
     return fokok_ki,adatok_ki,optimum
 
 def kereso_algoritmus_random(device,tc,hatar,probalkozasi_limit,paddle1,paddle2,paddle3):
